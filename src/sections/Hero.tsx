@@ -17,7 +17,7 @@ export function Hero() {
           <p className="hero-in mt-6 max-w-xl text-base leading-relaxed text-muted" style={{ '--i': 3 } as React.CSSProperties}>{p.intro}</p>
           <div className="hero-in mt-8 flex flex-wrap gap-3" style={{ '--i': 4 } as React.CSSProperties}>
             <Link to="/portfolio/projects" className="btn btn-primary">See my projects</Link>
-            <SafeLink href={p.cvPath} openInNewTab className="btn btn-ghost" missingHint="CV not set yet — add a PDF to public/ and set cvPath">Curiculum Vitae</SafeLink>
+            <SafeLink href={p.cvPath} openInNewTab className="btn btn-ghost" missingHint="CV not set yet — add a PDF to public/ and set cvPath">Curriculum Vitae</SafeLink>
           </div>
         </div>
 
