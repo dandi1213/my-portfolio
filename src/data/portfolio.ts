@@ -171,6 +171,7 @@ export const portfolio: Portfolio = {
         "/internship/Indopoly/indopoly_4.jpeg",
         "/internship/Indopoly/indopoly_5.jpeg",
         "/internship/Indopoly/indopoly_6.jpeg",
+        "/internship/Indopoly/indopoly_7.png",
       ],
       // Lebih dari satu gambar? Pakai: images: ['/projects/a.png', { src: '/projects/b.png', caption: 'Halaman detail' }],
       // (jika `images` diisi, ia dipakai menggantikan `image`)
