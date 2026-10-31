@@ -83,6 +83,7 @@ export const portfolio: Portfolio = {
         "/internship/Indopoly/indopoly_4.jpeg",
         "/internship/Indopoly/indopoly_5.jpeg",
         "/internship/Indopoly/indopoly_6.jpeg",
+        "/internship/Indopoly/indopoly_7.png",
       ],
     },
     {
