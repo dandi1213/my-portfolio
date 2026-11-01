@@ -21,7 +21,7 @@ export function Footer() {
           ))}
         </ul>
       </div>
-      <p className="container-page mt-6 text-xs text-muted">© {new Date().getFullYear()} {portfolio.name}. Built with React, Vite and Tailwind CSS.</p>
+      <p className="container-page mt-6 text-xs text-muted">© {new Date().getFullYear()} {portfolio.name}</p>
     </footer>
   )
 }
