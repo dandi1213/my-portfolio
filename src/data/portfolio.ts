@@ -4,10 +4,11 @@ export const portfolio: Portfolio = {
   name: "M Dandi Al Idrus",
   monogram: "MD",
   title: "Junior Software Developer",
-  tagline: "Building practical software solutions for real-world problems.",
-  intro: "D4 Industrial Information Engineering Technology graduate with 5 months of internship experience in IT and software development, including ERP-integrated web applications and WhatsApp automation.",
-  focus: ["Software Development", "Web Development", "Industrial IoT"],
-  openTo: "Open to entry-level opportunities in Software Development, Web Development, Application Development, and IT.",
+  tagline: "Membangun solusi perangkat lunak praktis untuk berbagai kebutuhan nyata.",
+  intro:
+    "Lulusan D4 Teknologi Rekayasa Informatika Industri dengan pengalaman magang selama 5 bulan di PT Indopoly Swakarsa Industry Tbk divisi IT dan pengembangan perangkat lunak, termasuk aplikasi web terintegrasi ERP dan otomasi WhatsApp.",
+  focus: ["Pengembangan Perangkat Lunak", "Pengembangan Web", "IoT Industri"],
+  openTo: "Terbuka untuk peluang tingkat pemula di bidang pengembangan perangkat lunak, pengembangan web, pengembangan aplikasi, dan TI.",
   email: "mdandialidrus08@gmail.com",
   cvPath: "/CV_M_Dandi_Al_Idrus.pdf",
   social: [
@@ -21,29 +22,29 @@ export const portfolio: Portfolio = {
   profile: {
     fullName: "M Dandi Al Idrus", // ganti jika nama lengkap Anda berbeda
     photo: "/projects/FotoProfil.jpeg", // contoh: "/profile.jpg" (taruh file di folder public/)
-    birth: "08 October 2003",
+    birth: "8 Oktober 2003",
     address: "Purwakarta",
     phone: "+62 878-2947-8221", // contoh: "+62 812-3456-7890"
   },
 
   about: [
-    "I graduated with a D4 degree in Industrial Information Engineering Technology from Politeknik Manufaktur Bandung. My academic background combines software development, information technology, IoT, and industrial automation.",
-    "During my five-month internship at PT Indopoly Swakarsa Industry Tbk, I developed a web-based WhatsApp monitoring dashboard integrated with the company's ERP system. My work involved frontend development, backend integration, database management, and WhatsApp message automation.",
-    "I enjoy solving technical problems, learning new technologies, and building practical solutions. I am looking for an entry-level role where I can contribute to software development or IT projects while continuing to grow as an engineer.",
+    "Saya lulus dari program D4 Teknologi Rekayasa Informatika Industri di Politeknik Manufaktur Bandung. Latar belakang akademis saya mencakup pengembangan perangkat lunak, teknologi informasi, IoT, dan otomasi industri.",
+    "Selama magang lima bulan di PT Indopoly Swakarsa Industry Tbk, saya mengembangkan dasbor pemantauan WhatsApp berbasis web yang terintegrasi dengan sistem ERP perusahaan. Pekerjaan saya mencakup pengembangan antarmuka, integrasi sisi server, pengelolaan basis data, dan otomasi pesan WhatsApp.",
+    "Saya senang memecahkan masalah teknis, mempelajari teknologi baru, dan membangun solusi praktis. Saya mencari posisi tingkat pemula agar dapat berkontribusi pada proyek pengembangan perangkat lunak atau TI sambil terus berkembang sebagai engineer.",
   ],
 
   // Entri pertama dianggap pendidikan terakhir. Harus tepat 2 entri.
   education: [
     {
       institution: "Politeknik Manufaktur Bandung",
-      program: "D4 Industrial Information Engineering Technology",
+      program: "D4 Teknologi Rekayasa Informatika Industri",
       logo: "/education/polman.png",
       period: "2022 – 2026",
-      description: "Graduated with a GPA of 3.32/4.00. Final project focused on smart agriculture using IoT and machine learning.",
+      description: "Lulus dengan IPK 3,32/4,00. Tugas akhir berfokus pada pertanian cerdas menggunakan IoT dan pembelajaran mesin.",
     },
     {
       institution: "SMKN 1 Plered",
-      program: "Industrial Automation Engineering",
+      program: "Teknik Otomasi Industri",
       logo: "/education/smkn1plered.png",
       period: "2018 – 2022",
       // description: "[OPTIONAL SHORT DESCRIPTION]",
@@ -60,20 +61,24 @@ export const portfolio: Portfolio = {
       kind: "work",
       organization: "PT Indopoly Swakarsa Industry Tbk",
       role: "IT & Software Development Intern",
-      employmentType: "Internship",
-      period: "February 2025 - July 2025", // ganti dengan periode pasti, mis. "Feb 2025 – Jun 2025"
+      employmentType: "Magang",
+      period: "Februari 2025 - Juli 2025",
       location: "Purwakarta",
-      description: "Five-month internship focused on a web-based WhatsApp monitoring dashboard integrated with the company's ERP system, covering frontend, backend integration, database work, and WhatsApp message automation.",
+      description:
+        "Program magang lima bulan yang berfokus pada pengembangan dasbor pemantauan WhatsApp berbasis web terintegrasi dengan sistem ERP perusahaan, mencakup antarmuka, integrasi sisi server, basis data, otomasi pesan WhatsApp, serta pemantauan dan pemeliharaan infrastruktur IT.",
       responsibilities: [
-        "Developed the WhatsApp monitoring dashboard across frontend and backend components.",
-        "Built the frontend with React.js and backend functionality with C#, connected through REST API.",
-        "Worked with Microsoft SQL Server to read and manage message data.",
-        "Implemented message status monitoring, search and filtering, message details, and manual retry for failed messages.",
-        "Used Python and Selenium for WhatsApp message automation.",
+        "Mengembangkan dasbor pemantauan WhatsApp pada bagian antarmuka dan sisi server.",
+        "Membangun antarmuka dengan React.js dan fungsionalitas sisi server dengan C#, yang terhubung melalui REST API.",
+        "Menggunakan Microsoft SQL Server untuk membaca dan mengelola data pesan.",
+        "Menerapkan pemantauan status pesan, pencarian dan penyaringan, detail pesan, serta pengiriman ulang secara manual untuk pesan yang gagal.",
+        "Menggunakan Python dan Selenium untuk otomasi pesan WhatsApp.",
+        "Melakukan pemantauan server secara berkala untuk memastikan layanan dan sistem IT berjalan dengan baik.",
+        "Membantu menangani kendala dan troubleshooting pada server serta sistem ERP.",
+        "Melakukan pemeriksaan dan perbaikan pada perangkat IoT, termasuk sensor suhu di ruang server yang mengalami kendala pembacaan data.",
       ],
-      achievements: ["Delivered a dedicated interface for checking message statuses and manually resending failed messages.", "Contributed to expanding the sending engine setup from one to four engines."],
-      stack: ["React.js", "C#", "REST API", "Microsoft SQL Server", "Python", "Selenium"],
-      url: "https://drive.google.com/file/d/1T2xb2MiQ4nySWIRS2-lFjGtyuL4kzeZ-/view?usp=sharing", // tautan referensi perusahaan atau bukti magang, jika ada
+      achievements: ["Membangun antarmuka khusus untuk memeriksa status pesan dan mengirim ulang pesan yang gagal secara manual.", "Berkontribusi dalam pengembangan konfigurasi mesin pengiriman dari satu menjadi empat mesin."],
+      stack: ["React.js", "C#", "REST API", "Microsoft SQL Server", "Python", "Selenium", "IoT", "Server Monitoring"],
+      url: "https://drive.google.com/file/d/1T2xb2MiQ4nySWIRS2-lFjGtyuL4kzeZ-/view?usp=sharing",
       projectSlug: "whatsapp-monitoring-dashboard",
       images: [
         "/internship/Indopoly/indopoly_0.jpeg",
@@ -90,18 +95,18 @@ export const portfolio: Portfolio = {
       slug: "puskesmas-garuda-kkn",
       kind: "work",
       organization: "UPTD Puskesmas Garuda Bandung",
-      role: "Mobile Application Developer",
-      employmentType: "KKN Project",
-      period: "October 2025 - November 2025", // ganti dengan periode pasti, mis. "Feb 2025 – Jun 2025"
+      role: "Pengembang Aplikasi Seluler",
+      employmentType: "Proyek KKN",
+      period: "Oktober 2025 - November 2025", // ganti dengan periode pasti, mis. "Feb 2025 – Jun 2025"
       location: "Bandung, Indonesia",
-      description: "Developed a mobile application to support document collection at UPTD Puskesmas Garuda Bandung as part of a community service program (KKN).",
+      description: "Mengembangkan aplikasi seluler untuk mendukung pengumpulan dokumen di UPTD Puskesmas Garuda Bandung sebagai bagian dari program Kuliah Kerja Nyata (KKN).",
       responsibilities: [
-        "Developed a mobile application using Flutter and Dart.",
-        "Supported the digitalization of document collection processes at the health center.",
-        "Worked with the KKN team to develop an application based on the identified needs of the institution.",
+        "Mengembangkan aplikasi seluler menggunakan Flutter dan Dart.",
+        "Mendukung digitalisasi proses pengumpulan dokumen di puskesmas.",
+        "Bekerja sama dengan tim KKN untuk mengembangkan aplikasi sesuai kebutuhan instansi.",
       ],
-      achievements: ["Contributed to the development of a mobile application to support administrative document collection."],
-      stack: ["Flutter", "Dart", "Mobile Application Development"],
+      achievements: ["Berkontribusi dalam pengembangan aplikasi seluler untuk mendukung pengumpulan dokumen administrasi."],
+      stack: ["Flutter", "Dart", "Pengembangan Aplikasi Seluler"],
       url: "",
       projectSlug: "",
       images: ["/kkn/kkn_1.jpeg", "/kkn/kkn_2.png", "/kkn/kkn_3.png", "/kkn/kkn_4.png"],
@@ -111,21 +116,18 @@ export const portfolio: Portfolio = {
       kind: "work",
       organization: "PT Sanbe Farma",
       role: "Maintenance & Automation Intern",
-      employmentType: "Internship",
-      period: "October 2021 - December 2021", // ganti dengan periode pasti, mis. "Feb 2025 – Jun 2025"
+      employmentType: "Magang",
+      period: "Oktober 2021 - Desember 2021", // ganti dengan periode pasti, mis. "Feb 2025 – Jun 2025"
       location: "Bandung, Indonesia",
-      description: "Internship experience supporting the Maintenance and Automation team in maintaining and troubleshooting automated production machines in a pharmaceutical manufacturing environment.",
+      description: "Pengalaman magang dalam mendukung tim Pemeliharaan dan Otomasi untuk merawat serta menangani kendala pada mesin produksi otomatis di lingkungan manufaktur farmasi.",
       responsibilities: [
-        "Assisted technicians with preventive maintenance and troubleshooting of automated production machines.",
-        "Supported technicians with PLC configuration and programming under supervision.",
-        "Assisted with electrical wiring activities and the installation of new machines.",
-        "Learned about industrial automation systems, equipment maintenance, and systematic troubleshooting.",
+        "Membantu teknisi melakukan pemeliharaan preventif dan menangani kendala pada mesin produksi otomatis.",
+        "Mendukung teknisi dalam konfigurasi dan pemrograman PLC di bawah pengawasan.",
+        "Membantu pekerjaan pengawatan listrik dan pemasangan mesin baru.",
+        "Mempelajari sistem otomasi industri, pemeliharaan peralatan, dan pemecahan masalah secara sistematis.",
       ],
-      achievements: [
-        "Gained hands-on exposure to industrial automation and maintenance practices in a manufacturing environment.",
-        "Developed a foundational understanding of PLC systems, electrical wiring, and automated production equipment.",
-      ],
-      stack: ["PLC", "Industrial Automation", "Preventive Maintenance", "Troubleshooting", "Electrical Wiring"],
+      achievements: ["Memperoleh pengalaman langsung dalam otomasi industri dan praktik pemeliharaan di lingkungan manufaktur.", "Membangun pemahaman dasar tentang sistem PLC, pengawatan listrik, dan peralatan produksi otomatis."],
+      stack: ["PLC", "Otomasi Industri", "Pemeliharaan Preventif", "Pemecahan Masalah", "Pengawatan Listrik"],
       url: "", // tautan referensi perusahaan atau bukti magang, jika ada
       projectSlug: "",
       images: ["/internship/SanbeFarma/sanbe_1.JPG", "/internship/SanbeFarma/sanbe_2.JPG", "/internship/SanbeFarma/sanbe_3.jpg", "/internship/SanbeFarma/sanbe_4.JPG", "/internship/SanbeFarma/sanbe_5.JPG"],
@@ -134,16 +136,16 @@ export const portfolio: Portfolio = {
       slug: "hima-organization",
       kind: "organization",
       organization: "Himpunan Mahasiswa Teknik Otomasi Manufaktur dan Mekatronika",
-      role: "Expert Staff, Facilities and Infrastructure Division",
-      employmentType: "Organization",
+      role: "Staf Ahli Divisi Sarana dan Prasarana",
+      employmentType: "Organisasi",
       period: "2024 - 2026",
-      description: "Contributed to student organization activities in the fields of manufacturing automation and mechatronics, supporting facilities and infrastructure needs to ensure smooth event operations.",
+      description: "Berkontribusi dalam kegiatan organisasi mahasiswa di bidang otomasi manufaktur dan mekatronika, serta mendukung kebutuhan sarana dan prasarana agar kegiatan berjalan lancar.",
       responsibilities: [
-        "Assisted in preparing facilities, equipment, and other resources needed for organizational activities.",
-        "Collaborated with division members and other committee members to support the successful execution of events.",
-        "Supported the coordination and management of equipment and logistical requirements for organizational activities.",
+        "Membantu menyiapkan fasilitas, perlengkapan, dan sumber daya lain yang dibutuhkan untuk kegiatan organisasi.",
+        "Berkolaborasi dengan anggota divisi dan panitia lain untuk mendukung kelancaran acara.",
+        "Mendukung koordinasi dan pengelolaan perlengkapan serta kebutuhan logistik kegiatan organisasi.",
       ],
-      achievements: ["Contributed to the smooth execution of organizational activities through facilities preparation and coordination."],
+      achievements: ["Mendukung kelancaran kegiatan organisasi melalui persiapan fasilitas dan koordinasi."],
       images: ["/Organization/himamo/himamo_1.JPG", "/Organization/himamo/himamo_2.JPG", "/Organization/himamo/himamo_3.jpg"],
       isDemo: false,
     },
@@ -152,16 +154,36 @@ export const portfolio: Portfolio = {
   projects: [
     {
       slug: "whatsapp-monitoring-dashboard",
-      title: "WhatsApp Monitoring Dashboard Integrated with ERP",
-      summary: "A web-based dashboard developed during my internship to monitor WhatsApp messages connected to the company's existing ERP system.",
-      problem: "The messaging process relied on a single sending engine, which could result in long queues and failed messages. A dedicated interface was needed to make message statuses easier to monitor.",
-      role: "Developed the dashboard across frontend and backend components, integrated the application with the existing ERP environment, and implemented message monitoring and retry features.",
+      title: "Dasbor Pemantauan WhatsApp Terintegrasi ERP",
+      summary:
+        "Pengembangan sistem dasbor berbasis web yang terintegrasi dengan ERP perusahaan untuk memantau aktivitas dan status pengiriman pesan WhatsApp secara terpusat, dilengkapi pengelolaan data pesan, pemantauan performa pengiriman, serta mekanisme pengiriman ulang pesan yang gagal.",
+
+      problem:
+        "Sebelumnya, proses pengiriman pesan WhatsApp hanya mengandalkan satu mesin pengiriman. Kondisi ini menyebabkan antrean pesan yang panjang dan berpotensi menimbulkan kegagalan pengiriman. Selain itu, belum tersedia dasbor khusus yang memudahkan pengguna memantau status setiap pesan, menelusuri riwayat pengiriman, dan menangani pesan yang gagal dikirim.",
+
+      role: "Bertanggung jawab mengembangkan dasbor pemantauan WhatsApp dari sisi frontend, backend, hingga integrasi basis data. Mengintegrasikan dasbor ke dalam sistem ERP perusahaan yang sudah berjalan serta mengembangkan fitur pemantauan pesan dan pengelolaan proses pengiriman ulang.",
+
       process:
-        "Built the frontend using React.js, developed backend functionality using C#, connected components through REST API, and used Microsoft SQL Server to work with message data. Python and Selenium were used for WhatsApp automation.",
+        "Mengembangkan antarmuka dasbor menggunakan React.js dan membangun fungsionalitas backend menggunakan C#. Menghubungkan frontend dan backend melalui REST API serta menggunakan Microsoft SQL Server untuk menyimpan dan mengelola data pesan. Mengintegrasikan sistem dengan mesin otomasi WhatsApp yang menggunakan Python dan Selenium. Selain itu, mengembangkan pengaturan mesin pengiriman dari satu menjadi empat mesin, dengan pembagian dua mesin untuk divisi HR dan dua mesin untuk divisi Operations. Menerapkan mekanisme percobaan ulang menggunakan mesin kedua apabila pengiriman melalui mesin pertama mengalami kegagalan.",
+
       outcome:
-        "Delivered a dedicated interface for checking message statuses, searching and filtering records, viewing message details, and manually resending failed messages. Also contributed to the expansion of the sending engine setup from one to four engines.",
-      features: ["Message status monitoring", "Search and filter message records", "Message details and manual retry", "WhatsApp automation"],
+        "Menghasilkan dasbor pemantauan WhatsApp yang terintegrasi dengan ERP dan memungkinkan pengguna memantau status pengiriman pesan secara terpusat. Pengguna dapat menelusuri data pesan, melihat detail pengiriman, memantau aktivitas berdasarkan divisi, serta melakukan pengiriman ulang secara manual terhadap pesan yang gagal. Pengembangan konfigurasi empat mesin pengiriman juga membantu membagi proses pengiriman berdasarkan kebutuhan divisi dan menyediakan mekanisme percobaan ulang ketika terjadi kegagalan.",
+
+      features: [
+        "Dashboard ringkasan aktivitas dan jumlah pesan WhatsApp",
+        "Pemantauan status pesan: Belum Dikirim, Berhasil, dan Gagal",
+        "Pencarian dan penyaringan data pesan",
+        "Halaman detail dan riwayat pengiriman pesan",
+        "Fitur pengiriman ulang pesan yang gagal secara manual",
+        "Pemantauan aktivitas pengiriman berdasarkan divisi HR dan Operations",
+        "Informasi waktu pemrosesan pengiriman pesan",
+        "Integrasi dengan ERP perusahaan",
+        "Konfigurasi empat mesin pengiriman WhatsApp",
+        "Mekanisme percobaan ulang pengiriman melalui mesin kedua",
+      ],
+
       stack: ["React.js", "C#", "REST API", "Microsoft SQL Server", "Python", "Selenium"],
+
       repoUrl: "",
       demoUrl: "",
       images: [
@@ -174,41 +196,41 @@ export const portfolio: Portfolio = {
         "/internship/Indopoly/indopoly_6.jpeg",
         "/internship/Indopoly/indopoly_7.png",
       ],
-      // Lebih dari satu gambar? Pakai: images: ['/projects/a.png', { src: '/projects/b.png', caption: 'Halaman detail' }],
-      // (jika `images` diisi, ia dipakai menggantikan `image`)
+
       isDemo: false,
     },
+
     {
       slug: "smart-agriculture-iot-machine-learning",
-      title: "Smart Agriculture Decision Support System",
-      summary: "An academic final project combining IoT and machine learning to support crop recommendations and irrigation water requirement estimation.",
-      problem: "The project explored how data-driven recommendations could support crop selection and irrigation planning in agriculture.",
-      role: "Worked on the development of a decision support system using machine learning methods for crop recommendations and irrigation water estimation.",
-      process: "Used Python, Pandas, and Scikit-learn for data processing and model development, applying Random Forest Classifier and Random Forest Regression.",
-      outcome: "Developed an academic decision support system focused on crop recommendations and irrigation water requirements. No quantitative performance claims are included here.",
-      features: ["Crop recommendation", "Irrigation water requirement estimation", "Machine learning model development"],
+      title: "Sistem Pendukung Keputusan Pertanian Cerdas",
+      summary: "Proyek tugas akhir yang menggabungkan IoT dan pembelajaran mesin untuk memberikan rekomendasi tanaman serta memperkirakan kebutuhan air irigasi.",
+      problem: "Proyek ini mengeksplorasi pemanfaatan rekomendasi berbasis data untuk mendukung pemilihan tanaman dan perencanaan irigasi.",
+      role: "Mengembangkan sistem pendukung keputusan menggunakan metode pembelajaran mesin untuk memberikan rekomendasi tanaman dan memperkirakan kebutuhan air irigasi.",
+      process: "Menggunakan Python, Pandas, dan Scikit-learn untuk pengolahan data dan pengembangan model, dengan menerapkan Random Forest Classifier dan Random Forest Regression.",
+      outcome: "Mengembangkan sistem pendukung keputusan akademis yang berfokus pada rekomendasi tanaman dan kebutuhan air irigasi. Tidak mencantumkan klaim performa kuantitatif.",
+      features: ["Rekomendasi tanaman", "Estimasi kebutuhan air irigasi", "Pengembangan model pembelajaran mesin"],
       stack: ["Python", "Pandas", "Scikit-learn", "Random Forest", "IoT"],
       repoUrl: "",
       demoUrl: "https://ta-frontend-polman-bandung.vercel.app/",
       images: [
-        { src: "/projects/TA/ta_1.png", caption: "System Dashboard" },
-        { src: "/projects/TA/ta_5.png", caption: "System Overview" },
-        { src: "/projects/TA/ta_2.jpeg", caption: "System Demonstration with Examiners" },
-        { src: "/projects/TA/ta_3.jpeg", caption: "Sensor Circuit Assembly" },
-        { src: "/projects/TA/ta_4.jpeg", caption: "Soil and Leaf Sensors in Application" },
+        { src: "/projects/TA/ta_1.png", caption: "Dasbor Sistem" },
+        { src: "/projects/TA/ta_5.png", caption: "Ikhtisar Sistem" },
+        { src: "/projects/TA/ta_2.jpeg", caption: "Demonstrasi Sistem kepada Penguji" },
+        { src: "/projects/TA/ta_3.jpeg", caption: "Rangkaian Sensor" },
+        { src: "/projects/TA/ta_4.jpeg", caption: "Penerapan Sensor Tanah dan Daun" },
       ],
       isDemo: false,
     },
     {
       slug: "puskesmas-garuda-document-collection-app",
-      title: "Puskesmas Garuda Document Collection Mobile App",
-      summary: "A mobile application developed to support document collection at UPTD Puskesmas Garuda Bandung during a community service program (KKN).",
-      problem: "The project aimed to support the document collection process at UPTD Puskesmas Garuda Bandung through a mobile application.",
-      role: "Contributed to the development of a mobile application using Flutter and Dart as part of the KKN team.",
-      process: "Developed the mobile application using Flutter and Dart based on the identified needs of the institution.",
-      outcome: "Contributed to the development of a mobile application to support administrative document collection at UPTD Puskesmas Garuda Bandung.",
-      features: ["Mobile application for document collection", "Digital support for administrative document handling"],
-      stack: ["Flutter", "Dart", "Mobile Application Development"],
+      title: "Aplikasi Seluler Pengumpulan Dokumen Puskesmas Garuda",
+      summary: "Aplikasi seluler yang dikembangkan untuk mendukung pengumpulan dokumen di UPTD Puskesmas Garuda Bandung selama program Kuliah Kerja Nyata (KKN).",
+      problem: "Proyek ini bertujuan mendukung proses pengumpulan dokumen di UPTD Puskesmas Garuda Bandung melalui aplikasi seluler.",
+      role: "Berkontribusi dalam pengembangan aplikasi seluler menggunakan Flutter dan Dart sebagai bagian dari tim KKN.",
+      process: "Mengembangkan aplikasi seluler menggunakan Flutter dan Dart berdasarkan kebutuhan instansi.",
+      outcome: "Berkontribusi dalam pengembangan aplikasi seluler untuk mendukung pengumpulan dokumen administrasi di UPTD Puskesmas Garuda Bandung.",
+      features: ["Aplikasi seluler untuk pengumpulan dokumen", "Dukungan digital untuk pengelolaan dokumen administrasi"],
+      stack: ["Flutter", "Dart", "Pengembangan Aplikasi Seluler"],
       repoUrl: "",
       demoUrl: "",
       images: ["/kkn/kkn_1.jpeg", "/kkn/kkn_2.png", "/kkn/kkn_3.png", "/kkn/kkn_4.png"],
@@ -216,24 +238,24 @@ export const portfolio: Portfolio = {
     },
     {
       slug: "esp32-iot-web-configuration-system",
-      title: "ESP32-Based IoT Monitoring and Web Configuration System",
-      summary: "An ESP32-based IoT system featuring a built-in web interface for configuring WiFi connectivity, selecting communication modes, and managing sensor settings for remote monitoring applications.",
+      title: "Sistem Pemantauan IoT dan Konfigurasi Web Berbasis ESP32",
+      summary: "Sistem IoT berbasis ESP32 dengan antarmuka web bawaan untuk mengatur koneksi WiFi, memilih mode komunikasi, dan mengelola pengaturan sensor pada aplikasi pemantauan jarak jauh.",
       problem:
-        "Configuring IoT devices traditionally requires modifying and uploading firmware whenever communication settings need to be changed. This project provides a web-based configuration interface to simplify device setup without requiring firmware reprogramming.",
-      role: "Collaborated on developing an ESP32-based IoT configuration system with a built-in web server, allowing users to manage WiFi settings, select communication modes, and configure sensor options through a web browser.",
+        "Konfigurasi perangkat IoT biasanya mengharuskan firmware diubah dan diunggah ulang setiap kali pengaturan komunikasi perlu diperbarui. Proyek ini menyediakan antarmuka konfigurasi berbasis web untuk menyederhanakan pengaturan perangkat tanpa perlu memprogram ulang firmware.",
+      role: "Berkolaborasi mengembangkan sistem konfigurasi IoT berbasis ESP32 dengan web server bawaan, sehingga pengguna dapat mengelola pengaturan WiFi, memilih mode komunikasi, dan mengatur sensor melalui browser.",
       process:
-        "Developed the ESP32 web configuration interface using Arduino IDE and ESP32 libraries. Implemented WiFi Access Point and Station configuration, operational mode selection, and device status monitoring. Integrated configuration options for GSM using SIM800 and LoRa communication using RFM95/SX1276 modules.",
+        "Mengembangkan antarmuka konfigurasi web ESP32 menggunakan Arduino IDE dan pustaka ESP32. Menerapkan konfigurasi WiFi Access Point dan Station, pemilihan mode operasional, serta pemantauan status perangkat. Mengintegrasikan opsi konfigurasi GSM menggunakan SIM800 dan komunikasi LoRa menggunakan modul RFM95/SX1276.",
       outcome:
-        "Developed a web-based configuration system that allows users to configure WiFi credentials, select GSM, WiFi, or LoRa communication modes, choose supported sensor options, and monitor device status through a browser without reprogramming the ESP32.",
+        "Mengembangkan sistem konfigurasi berbasis web yang memungkinkan pengguna mengatur kredensial WiFi, memilih mode komunikasi GSM, WiFi, atau LoRa, memilih opsi sensor yang didukung, dan memantau status perangkat melalui browser tanpa memprogram ulang ESP32.",
       features: [
-        "Built-in ESP32 web server and configuration dashboard",
-        "WiFi Access Point and Station configuration",
-        "WiFi credential management and automatic reconnection",
-        "GSM communication mode using SIM800",
-        "LoRa communication mode using RFM95/SX1276",
-        "LoRa sensor selection for water level and NPK",
-        "Real-time device status monitoring",
-        "Persistent configuration storage",
+        "Web server dan dasbor konfigurasi bawaan ESP32",
+        "Konfigurasi WiFi Access Point dan Station",
+        "Pengelolaan kredensial WiFi dan koneksi ulang otomatis",
+        "Mode komunikasi GSM menggunakan SIM800",
+        "Mode komunikasi LoRa menggunakan RFM95/SX1276",
+        "Pemilihan sensor LoRa untuk ketinggian air dan NPK",
+        "Pemantauan status perangkat secara langsung",
+        "Penyimpanan konfigurasi persisten",
       ],
       stack: ["ESP32", "Arduino IDE", "C/C++", "HTML", "CSS", "JavaScript", "WiFi", "WebServer", "GSM", "LoRaWAN", "IoT"],
       repoUrl: "",
@@ -243,37 +265,38 @@ export const portfolio: Portfolio = {
     },
     {
       slug: "drilling-control-operation-mes",
-      title: "Drilling Control Operation – Manufacturing Execution System",
-      summary: "An industrial automation project focused on developing a Drilling Control System integrated with a Manufacturing Execution System (MES) for machine control, real-time monitoring, and production efficiency analysis.",
+      title: "Operasi Kendali Pengeboran – Sistem Eksekusi Manufaktur",
+      summary:
+        "Proyek otomasi industri yang berfokus pada pengembangan sistem kendali pengeboran terintegrasi dengan Sistem Eksekusi Manufaktur (MES) untuk mengendalikan mesin, melakukan pemantauan secara langsung, dan menganalisis efisiensi produksi.",
       problem:
-        "The project addressed the need for an integrated drilling control system that enables operators to monitor machine status, control motor movements, manage manual and automatic operating modes, and visualize operational data through a centralized dashboard.",
-      role: "Collaborated on the development of a drilling control and monitoring system using PLC-based automation and a Node-RED dashboard. The project involved implementing motor control logic, designing the user interface, integrating PLC communication, visualizing sensor data, and developing Overall Equipment Effectiveness (OEE) calculations.",
+        "Proyek ini menjawab kebutuhan akan sistem kendali pengeboran terintegrasi yang memungkinkan operator memantau status mesin, mengendalikan pergerakan motor, mengatur mode operasi manual dan otomatis, serta melihat data operasional melalui dasbor terpusat.",
+      role: "Berkolaborasi mengembangkan sistem kendali dan pemantauan pengeboran menggunakan otomasi berbasis PLC dan dasbor Node-RED. Proyek ini mencakup penerapan logika kendali motor, perancangan antarmuka pengguna, integrasi komunikasi PLC, visualisasi data sensor, dan pengembangan perhitungan Overall Equipment Effectiveness (OEE).",
       process:
-        "Developed PLC control logic using Bosch Rexroth ctrlX PLC and configured Node-RED flows for dashboard functionality and PLC communication. Implemented manual and automatic drilling cycles, forward and reverse motor control, limit switch handling, SVG machine animation, sensor monitoring, real-time data visualization, machine operating-time tracking, and OEE calculations based on availability, performance, and quality.",
+        "Mengembangkan logika kendali PLC menggunakan Bosch Rexroth ctrlX PLC dan mengonfigurasi alur Node-RED untuk fungsi dasbor serta komunikasi PLC. Menerapkan siklus pengeboran manual dan otomatis, kendali motor maju dan mundur, penanganan sakelar batas, animasi mesin SVG, pemantauan sensor, visualisasi data secara langsung, pencatatan waktu operasi mesin, serta perhitungan OEE berdasarkan ketersediaan, performa, dan kualitas.",
       outcome:
-        "Developed an integrated drilling control prototype featuring manual and automatic machine operation, a dashboard for real-time control and monitoring, sensor data visualization, and OEE performance indicators. The project demonstrated the integration of PLC-based automation and a Node-RED interface to support industrial machine operation and monitoring.",
+        "Mengembangkan prototipe kendali pengeboran terintegrasi yang mencakup pengoperasian mesin secara manual dan otomatis, dasbor kendali dan pemantauan secara langsung, visualisasi data sensor, serta indikator performa OEE. Proyek ini menunjukkan integrasi otomasi berbasis PLC dengan antarmuka Node-RED untuk mendukung pengoperasian dan pemantauan mesin industri.",
       features: [
-        "Manual and automatic drilling operation",
-        "PLC-based motor forward and reverse control",
-        "Limit switch integration and automatic cycle sequencing",
-        "Node-RED dashboard with login and logout functionality",
-        "SVG-based drilling machine animation",
-        "Real-time machine status and sensor monitoring",
-        "Sensor data visualization using charts",
-        "Machine operating-time tracking",
-        "OEE calculation and visualization",
-        "PLC and dashboard integration using ctrlX and Node-RED",
+        "Pengoperasian pengeboran manual dan otomatis",
+        "Kendali motor maju dan mundur berbasis PLC",
+        "Integrasi limit switch dan pengurutan siklus otomatis",
+        "Dasbor Node-RED dengan fungsi masuk dan keluar",
+        "Animasi mesin pengeboran berbasis SVG",
+        "Pemantauan status mesin dan sensor secara langsung",
+        "Visualisasi data sensor menggunakan grafik",
+        "Pencatatan waktu operasi mesin",
+        "Perhitungan dan visualisasi OEE",
+        "Integrasi PLC dan dasbor menggunakan ctrlX dan Node-RED",
       ],
-      stack: ["Bosch Rexroth ctrlX", "PLC", "Node-RED", "JavaScript", "SVG", "Industrial Automation", "Manufacturing Execution System (MES)", "OEE"],
+      stack: ["Bosch Rexroth ctrlX", "PLC", "Node-RED", "JavaScript", "SVG", "Otomasi Industri", "Sistem Eksekusi Manufaktur (MES)", "OEE"],
       repoUrl: "https://drive.google.com/file/d/12Pmb_1e9CjXzcDmS2qsMZ5WGkOao5_Q7/view?usp=sharing",
       demoUrl: "",
       images: [
-        { src: "/projects/MES/mes_1.png", caption: "System Overview" },
-        { src: "/projects/MES/mes_2.png", caption: "Control and Monitoring Dashboard" },
-        { src: "/projects/MES/mes_3.png", caption: "Data Visualization Dashboard" },
-        { src: "/projects/MES/mes_4.png", caption: "PLC Ladder Logic Diagram" },
-        { src: "/projects/MES/mes_5.png", caption: "Visualization in CODESYS CtrlX Software" },
-        { src: "/projects/MES/mes_6.png", caption: "Node-RED Flow Overview" },
+        { src: "/projects/MES/mes_1.png", caption: "Ikhtisar Sistem" },
+        { src: "/projects/MES/mes_2.png", caption: "Dasbor Kendali dan Pemantauan" },
+        { src: "/projects/MES/mes_3.png", caption: "Dasbor Visualisasi Data" },
+        { src: "/projects/MES/mes_4.png", caption: "Diagram Logika Ladder PLC" },
+        { src: "/projects/MES/mes_5.png", caption: "Visualisasi pada Perangkat Lunak CODESYS CtrlX" },
+        { src: "/projects/MES/mes_6.png", caption: "Ikhtisar Flow Node-RED" },
       ],
       isDemo: false,
     },
@@ -281,28 +304,28 @@ export const portfolio: Portfolio = {
 
   certificates: [
     {
-      name: "Webinar on the Application and Implementation of Industrial Automation in the Manufacturing Industry",
+      name: "Webinar Penerapan dan Implementasi Otomasi Industri di Industri Manufaktur",
       issuer: "Kampus Merdeka",
       year: "2024",
       image: "/certificate/webinar.png", // contoh: "/certificates/python.jpg". Banyak gambar: images: ["/certificate/a.png", "/certificate/b.png"]
       url: "https://drive.google.com/file/d/1tgb_HW2VgPFaJJjdcNpqF82SrICZxI1D/view?usp=sharing", // link sertifikat / kredensial, jika ada
     },
     {
-      name: "TOEFL-CERTIFIED ENGLISH",
+      name: "Bahasa Inggris Bersertifikat TOEFL",
       issuer: "PT. MAIRODI MANDIRI SEJAHTERA",
       year: "2024",
       image: "/certificate/TOEFL.png", // contoh: "/certificates/python.jpg"
       url: "https://drive.google.com/file/d/1uPmvCE9Hvk0wpyT6ZIZmyZuqQfW7xLp_/view?usp=sharing", // link sertifikat / kredensial, jika ada
     },
     {
-      name: "Basic Python Programming Training",
+      name: "Pelatihan Dasar Pemrograman Python",
       issuer: "Program Kartu Prakerja",
       year: "2023",
       image: "/certificate/E-SERTIFIKAT_KOMPETENSI.png", // contoh: "/certificates/python.jpg"
       url: "https://drive.google.com/file/d/1VZt7h7PJHI_77MWV0zl1YmX4mGUzjr5T/view?usp=sharing", // link sertifikat / kredensial, jika ada
     },
     {
-      name: "CERTIFICATE OF COMPETENCY ASSESSMENT",
+      name: "SERTIFIKAT UJI KOMPETENSI",
       issuer: "SMKN 1 PLERED",
       year: "2022",
       image: "/certificate/UJIKOM_SMK.png", // contoh: "/certificates/python.jpg"
@@ -312,27 +335,27 @@ export const portfolio: Portfolio = {
 
   awards: [
     {
-      title: "1st Place - Assembly Bluetooth Smartcar",
-      issuer: "Robonesia, UPTD TIKOMDIK & West Java Provincial Education Office",
+      title: "Juara 1 - Perakitan Smartcar Bluetooth",
+      issuer: "Robonesia, UPTD TIKOMDIK & Dinas Pendidikan Provinsi Jawa Barat",
       year: "2021",
       description:
-        "Won 1st place in the Assembly Bluetooth Smartcar category at the J.E.R.C. (Jabar Robotic Expo & Competition), held from May 31 to June 5, 2021, organized by Robonesia in collaboration with the UPTD for Educational Information and Communication Technology (TIKOMDIK) and the West Java Provincial Education Office.",
+        "Meraih juara 1 kategori Perakitan Smartcar Bluetooth pada J.E.R.C. (Jabar Robotic Expo & Competition) yang diselenggarakan pada 31 Mei hingga 5 Juni 2021 oleh Robonesia, bekerja sama dengan UPTD Teknologi Informasi dan Komunikasi Pendidikan (TIKOMDIK) serta Dinas Pendidikan Provinsi Jawa Barat.",
       url: "https://drive.google.com/file/d/13x3PeQEWZxYH992RZh659NfV2Nikg7Ad/view?usp=sharing", // tautan bukti atau referensi penghargaan, jika ada
     },
     {
-      title: "Smart Agriculture Decision Support System Based on Internet of Things and Machine Learning for Crop Recommendation and Irrigation Water Requirements",
+      title: "Sistem Pendukung Keputusan Pertanian Cerdas Berbasis Internet of Things dan Pembelajaran Mesin untuk Rekomendasi Tanaman dan Kebutuhan Air Irigasi",
       issuer: "Politeknik Manufaktur Bandung",
       year: "2026",
       description:
-        "Developed a research-based smart agriculture decision support system integrating Internet of Things (IoT) and Machine Learning to recommend suitable crops and estimate irrigation water requirements, supporting data-driven agricultural decision-making and efficient water management.",
+        "Mengembangkan sistem pendukung keputusan pertanian cerdas berbasis penelitian yang mengintegrasikan Internet of Things (IoT) dan pembelajaran mesin untuk merekomendasikan tanaman yang sesuai serta memperkirakan kebutuhan air irigasi, sehingga mendukung pengambilan keputusan pertanian berbasis data dan pengelolaan air yang efisien.",
       url: "https://drive.google.com/file/d/1JFb92bsdhxB056PpOSyOoIln5O3HQvo6/view?usp=sharing", // tautan bukti atau referensi penghargaan, jika ada
     },
     {
-      title: "Analysis of the Level of Understanding Among Industrial Informatics Engineering Technology Students Regarding the Use of the JavaScript Programming Language",
+      title: "Analisis Tingkat Pemahaman Mahasiswa Teknologi Rekayasa Informatika Industri terhadap Penggunaan Bahasa Pemrograman JavaScript",
       issuer: "Informatika Dan Teknologi (INTECH)",
       year: "2026",
       description:
-        "Conducted a research study analyzing the level of understanding among Industrial Informatics Engineering Technology students regarding the use of JavaScript programming language. The study aimed to assess students' programming knowledge, identify challenges in understanding JavaScript concepts, and evaluate their familiarity with its practical application in programming.",
+        "Melakukan penelitian untuk menganalisis tingkat pemahaman mahasiswa Teknologi Rekayasa Informatika Industri terhadap penggunaan bahasa pemrograman JavaScript. Penelitian ini bertujuan menilai pengetahuan pemrograman mahasiswa, mengidentifikasi kendala dalam memahami konsep JavaScript, serta mengevaluasi pemahaman mereka tentang penerapannya dalam pemrograman.",
       url: "", // tautan bukti atau referensi penghargaan, jika ada
     },
   ],
@@ -341,7 +364,7 @@ export const portfolio: Portfolio = {
   // Jika file belum ada, otomatis tampil kotak placeholder.
   techStack: [
     {
-      category: "Programming Languages",
+      category: "Bahasa Pemrograman",
       items: [
         { name: "Python", logo: "/assets/tech/python.png" },
         { name: "JavaScript", logo: "/assets/tech/javascript.png" },
@@ -350,7 +373,7 @@ export const portfolio: Portfolio = {
       ],
     },
     {
-      category: "Web Development",
+      category: "Pengembangan Web",
       items: [
         { name: "React.js", logo: "/assets/tech/react.svg" },
         { name: "HTML", logo: "/assets/tech/html.svg" },
@@ -358,7 +381,7 @@ export const portfolio: Portfolio = {
       ],
     },
     {
-      category: "Database",
+      category: "Basis Data",
       items: [
         { name: "Microsoft SQL Server", logo: "/assets/tech/sql_server.svg" },
         { name: "MySql", logo: "/assets/tech/mysql.svg" },
@@ -366,21 +389,21 @@ export const portfolio: Portfolio = {
       ],
     },
     {
-      category: "Tools & Automation",
+      category: "Alat & Otomasi",
       items: [
         { name: "Git", logo: "/assets/tech/git.svg" },
         { name: "Selenium", logo: "/assets/tech/selenium.svg" },
       ],
     },
     {
-      category: "Data & Machine Learning",
+      category: "Data & Pembelajaran Mesin",
       items: [
         { name: "Pandas", logo: "/assets/tech/pandas.svg" },
         { name: "Scikit-learn", logo: "/assets/tech/scikit-learn.svg" },
       ],
     },
     {
-      category: "IoT & Industrial Automation",
+      category: "IoT & Otomasi Industri",
       items: [
         { name: "ESP32", logo: "/assets/tech/esp32.svg" },
         { name: "Arduino", logo: "/assets/tech/arduino.svg" },
@@ -390,7 +413,7 @@ export const portfolio: Portfolio = {
   ],
 
   seo: {
-    title: "M Dandi Al Idrus — Junior Software Developer",
-    description: "Portfolio of M Dandi Al Idrus, a D4 Industrial Informatics Engineering graduate with internship experience in software development, ERP integration, WhatsApp automation, IoT, and industrial automation.",
+    title: "M Dandi Al Idrus — Pengembang Perangkat Lunak Junior",
+    description: "Portofolio M Dandi Al Idrus, lulusan D4 Teknologi Rekayasa Informatika Industri dengan pengalaman magang di bidang pengembangan perangkat lunak, integrasi ERP, otomasi WhatsApp, IoT, dan otomasi industri.",
   },
 };
