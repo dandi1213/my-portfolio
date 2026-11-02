@@ -6,7 +6,7 @@ export const portfolio: Portfolio = {
   title: "Junior Software Developer | IT Engineer",
   tagline: "Mengembangkan solusi perangkat lunak yang praktis, terukur, dan sesuai kebutuhan pengguna.",
   intro:
-    "Lulusan D4 Teknologi Rekayasa Informatika Industri dengan pengalaman di bidang pengembangan perangkat lunak dan dukungan TI. Pernah mengembangkan sistem otomatisasi WhatsApp yang terintegrasi dengan ERP serta dasbor pemantauan. Tugas akhir berfokus pada sistem pendukung keputusan pertanian berbasis IoT dan machine learning.",
+    "Lulusan D4 Teknologi Rekayasa Informatika Industri dengan pengalaman di bidang pengembangan perangkat lunak dan dukungan IT. Pernah mengembangkan sistem otomatisasi WhatsApp yang terintegrasi dengan ERP serta dasbor pemantauan. Tugas akhir berfokus pada sistem pendukung keputusan pertanian berbasis IoT dan machine learning.",
   focus: ["Pengembangan Perangkat Lunak", "Pengembangan Web", "IoT Industri"],
   openTo: "Terbuka untuk peluang karier tingkat pemula di bidang software development, web development, pengembangan aplikasi, dan teknologi informasi.",
   email: "mdandialidrus08@gmail.com",
@@ -251,8 +251,7 @@ export const portfolio: Portfolio = {
       slug: "esp32-iot-web-configuration-system",
       title: "Sistem Pemantauan IoT dan Konfigurasi Web Berbasis ESP32",
       summary: "Sistem IoT berbasis ESP32 yang menyediakan antarmuka web untuk mengatur koneksi Wi-Fi, memilih mode komunikasi, dan menentukan sensor yang digunakan.",
-      problem:
-        "Perubahan pengaturan komunikasi perangkat IoT sering kali memerlukan pemrograman ulang firmware. Proyek ini menyediakan antarmuka web agar konfigurasi tertentu dapat diubah melalui browser tanpa mengunggah ulang program.",
+      problem: "Perubahan pengaturan komunikasi perangkat IoT sering kali memerlukan pemrograman ulang firmware. Proyek ini menyediakan antarmuka web agar konfigurasi tertentu dapat diubah melalui browser tanpa mengunggah ulang program.",
       role: "Berkolaborasi mengembangkan sistem konfigurasi berbasis ESP32 yang memungkinkan pengguna mengatur Wi-Fi, memilih mode komunikasi, dan menentukan sensor melalui browser.",
       process:
         "Membangun antarmuka konfigurasi web menggunakan Arduino IDE dan pustaka ESP32. Fitur yang dikembangkan mencakup mode Wi-Fi Access Point dan Station, pemilihan mode komunikasi, serta pemantauan status perangkat. Sistem juga mendukung opsi komunikasi GSM melalui SIM800 dan LoRa melalui modul RFM95/SX1276.",
@@ -277,10 +276,8 @@ export const portfolio: Portfolio = {
     {
       slug: "drilling-control-operation-mes",
       title: "Operasi Kendali Pengeboran – Sistem Eksekusi Manufaktur",
-      summary:
-        "Proyek simulasi otomasi industri yang mengintegrasikan kendali pengeboran berbasis PLC dengan antarmuka pemantauan Node-RED dalam konteks Manufacturing Execution System (MES).",
-      problem:
-        "Proyek ini mengeksplorasi integrasi kendali mesin dan antarmuka pemantauan untuk menampilkan status operasi, mengendalikan motor, serta menyajikan informasi melalui dasbor.",
+      summary: "Proyek simulasi otomasi industri yang mengintegrasikan kendali pengeboran berbasis PLC dengan antarmuka pemantauan Node-RED dalam konteks Manufacturing Execution System (MES).",
+      problem: "Proyek ini mengeksplorasi integrasi kendali mesin dan antarmuka pemantauan untuk menampilkan status operasi, mengendalikan motor, serta menyajikan informasi melalui dasbor.",
       role: "Berkolaborasi mengembangkan simulasi kendali dan pemantauan pengeboran menggunakan PLC dan Node-RED. Pekerjaan mencakup logika kendali motor, antarmuka HMI, komunikasi PLC, dan visualisasi status operasi.",
       process:
         "Menyusun logika kendali pada lingkungan ctrlX dan mengonfigurasi alur Node-RED untuk dasbor serta komunikasi PLC. Simulasi mencakup kendali motor maju-mundur, logika operasi sederhana, tampilan HMI, dan visualisasi status sistem.",
