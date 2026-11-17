@@ -131,25 +131,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     setActiveImageIdx(0);
   }, [project]);
 
-  // Lock body scroll saat modal project aktif
-  useEffect(() => {
-    if (!project) return;
-    const originalBodyOverflow = document.body.style.overflow;
-    const originalHtmlOverflow = document.documentElement.style.overflow;
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    if (scrollBarWidth > 0) {
-      document.body.style.paddingRight = `${scrollBarWidth}px`;
-    }
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = originalBodyOverflow;
-      document.documentElement.style.overflow = originalHtmlOverflow;
-      document.body.style.paddingRight = '';
-    };
-  }, [project]);
-
   useEffect(() => {
     if (!project) return;
     const handleKeyDown = (e: KeyboardEvent) => {

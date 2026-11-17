@@ -29,25 +29,6 @@ export function ExperienceModal({
   onClose,
   onNavigateContact
 }: ExperienceModalProps) {
-  // Lock body scroll saat modal experience aktif
-  useEffect(() => {
-    if (!experienceItem) return;
-    const originalBodyOverflow = document.body.style.overflow;
-    const originalHtmlOverflow = document.documentElement.style.overflow;
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    if (scrollBarWidth > 0) {
-      document.body.style.paddingRight = `${scrollBarWidth}px`;
-    }
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = originalBodyOverflow;
-      document.documentElement.style.overflow = originalHtmlOverflow;
-      document.body.style.paddingRight = '';
-    };
-  }, [experienceItem]);
-
   useEffect(() => {
     if (!experienceItem) return;
     const handleKeyDown = (e: KeyboardEvent) => {
