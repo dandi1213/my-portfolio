@@ -51,6 +51,27 @@ export default function App() {
     }, 3200);
   };
 
+  // Lock background body scroll when any modal is open
+  useEffect(() => {
+    const isModalOpen = Boolean(selectedProject || expModalItem);
+    if (isModalOpen) {
+      const originalBodyOverflow = document.body.style.overflow;
+      const originalHtmlOverflow = document.documentElement.style.overflow;
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+      }
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.overflow = originalBodyOverflow;
+        document.documentElement.style.overflow = originalHtmlOverflow;
+        document.body.style.paddingRight = '';
+      };
+    }
+  }, [selectedProject, expModalItem]);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
