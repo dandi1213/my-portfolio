@@ -144,7 +144,7 @@ export function Skills({ skills }: SkillsProps) {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUpOrLeave}
             onMouseLeave={handleMouseUpOrLeave}
-            className="skills-scroll-container grid grid-rows-2 grid-flow-col auto-cols-[135px] sm:auto-cols-auto sm:grid-rows-none sm:grid-flow-row sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 overflow-x-auto sm:overflow-visible touch-pan-x select-none cursor-grab active:cursor-grabbing sm:cursor-default"
+            className="skills-scroll-container grid grid-rows-2 grid-flow-col auto-cols-[135px] sm:auto-cols-auto sm:grid-rows-none sm:grid-flow-row sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 overflow-x-auto sm:overflow-visible select-none cursor-grab active:cursor-grabbing sm:cursor-default"
           >
             {skills.map((skill) => (
               <div

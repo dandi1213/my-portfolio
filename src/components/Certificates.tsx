@@ -157,7 +157,7 @@ export function Certificates({ certificates }: CertificatesProps) {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUpOrLeave}
           onMouseLeave={handleMouseUpOrLeave}
-          className="certificates-scroll-container flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-proximity md:snap-none -mx-4 px-4 sm:mx-0 sm:px-0 touch-pan-x select-none cursor-grab active:cursor-grabbing md:cursor-default"
+          className="certificates-scroll-container flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 items-stretch overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-proximity md:snap-none -mx-4 px-4 sm:mx-0 sm:px-0 select-none cursor-grab active:cursor-grabbing md:cursor-default"
         >
           {filteredCertificates.map((cert, idx) => (
             <div
