@@ -57,7 +57,7 @@ export function About({ personal }: AboutProps) {
           <SectionHeader
             title="About"
             highlight="Me"
-            subtitle="A closer look at my background, engineering philosophy, and cross-platform technical focus."
+            subtitle="Mengenal lebih dekat latar belakang, filosofi rekayasa, dan fokus teknis lintas platform saya."
           />
         </Reveal>
 

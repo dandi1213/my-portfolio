@@ -53,7 +53,7 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
     <section id="projects" className="py-24 lg:py-32 relative border-t border-white/[0.07]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <SectionHeader title="Featured" highlight="Projects" subtitle="Rotate through recent web applications and design systems. Click the center project card to inspect its multi-screenshot gallery and case study." />
+          <SectionHeader title="Featured" highlight="Projects" subtitle="Jelajahi berbagai aplikasi web dan sistem desain terbaru. Pilih kartu proyek untuk melihat galeri tangkapan layar dan studi kasus lengkap." />
         </Reveal>
 
         <Reveal delay={80}>

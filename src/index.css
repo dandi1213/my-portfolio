@@ -15,12 +15,14 @@ body.modal-open {
 
 /* Sembunyikan scrollbar pada container horizontal agar tampilan bersih */
 .skills-scroll-container,
-.certificates-scroll-container {
+.certificates-scroll-container,
+.experience-scroll-container {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 .skills-scroll-container::-webkit-scrollbar,
-.certificates-scroll-container::-webkit-scrollbar {
+.certificates-scroll-container::-webkit-scrollbar,
+.experience-scroll-container::-webkit-scrollbar {
   display: none;
 }
 

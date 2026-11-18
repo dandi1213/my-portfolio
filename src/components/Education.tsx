@@ -17,7 +17,7 @@ export function Education({ education }: EducationProps) {
           <SectionHeader
             title="My"
             highlight="Education"
-            subtitle="Formal engineering degree credentials and foundational industrial automation training."
+            subtitle="Kualifikasi pendidikan formal di bidang teknik serta dasar-dasar otomasi industri."
           />
         </Reveal>
 

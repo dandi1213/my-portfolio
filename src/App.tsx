@@ -156,11 +156,7 @@ export default function App() {
         <Contact personal={personal} onShowToast={showToast} />
       </main>
 
-      <Footer
-        personal={personal}
-        navItems={navItems}
-        onNavigate={scrollToSection}
-      />
+      <Footer personal={personal} />
 
       {showBackToTop && (
         <button

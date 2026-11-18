@@ -101,7 +101,7 @@ export function Contact({ personal, onShowToast }: ContactProps) {
           <SectionHeader
             title="Let's Work"
             highlight="Together!"
-            subtitle="Have a product idea, engineering role, or design challenge in mind? Send a message and let's discuss how we can build something remarkable."
+            subtitle="Punya ide produk, peluang kerja di bidang rekayasa, atau tantangan desain? Kirim pesan dan mari berdiskusi tentang cara mewujudkannya."
           />
         </Reveal>
 
