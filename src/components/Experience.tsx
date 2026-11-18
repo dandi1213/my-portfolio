@@ -159,7 +159,7 @@ export function Experience({
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
-            className="experience-scroll-container -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto touch-pan-x px-4 pb-5 select-none cursor-grab active:cursor-grabbing sm:-mx-6 sm:px-6 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0 md:cursor-default lg:gap-8"
+            className="experience-scroll-container -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-5 select-none cursor-grab active:cursor-grabbing sm:-mx-6 sm:px-6 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0 md:cursor-default lg:gap-8"
           >
             {filteredExperience.map((item, idx) => (
               <div
