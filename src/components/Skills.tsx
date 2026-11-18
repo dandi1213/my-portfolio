@@ -17,55 +17,46 @@ export function Skills({ skills }: SkillsProps) {
   const isUserInteractingRef = useRef(false);
   const resumeTimeoutRef = useRef<number | null>(null);
 
-  // Pause otomatis saat user menyentuh / menggeser layar
+  // Jeda sementara saat user sedang aktif menyentuh / menggeser layar
   const pauseAutoScrollTemporarily = () => {
     isUserInteractingRef.current = true;
     if (resumeTimeoutRef.current) window.clearTimeout(resumeTimeoutRef.current);
-    // Lanjutkan otomatis bergeser setelah 2.5 detik jika tidak ada sentuhan lagi
+    // Begitu sentuhan selesai, langsung lanjutkan geser otomatis tanpa jeda panjang
     resumeTimeoutRef.current = window.setTimeout(() => {
       isUserInteractingRef.current = false;
-    }, 2500);
+    }, 200);
   };
 
-  // ── Auto-Scroll Halus di HP (Ping-Pong Bolak-Balik Otomatis) ───────────────
+  // ── Auto-Scroll Halus di HP (Terus Bergerak Tanpa Jeda) ────────────────────
   useEffect(() => {
     const el = scrollContainerRef.current;
     if (!el) return;
 
     let rafId: number;
     let direction: 'right' | 'left' = 'right';
-    let isPausedAtEdge = false;
-    let edgeTimer: number | null = null;
 
-    const SPEED = 0.55; // Kecepatan geser sangat lembut dan stabil
+    const SPEED = 0.55; // Kecepatan geser stabil dan konstan
 
     const tick = () => {
       if (
         window.innerWidth < 640 &&
         el &&
-        !isUserInteractingRef.current &&
-        !isPausedAtEdge
+        !isUserInteractingRef.current
       ) {
         const maxScroll = el.scrollWidth - el.clientWidth;
 
-        if (maxScroll > 15) {
+        if (maxScroll > 10) {
           if (direction === 'right') {
             el.scrollLeft += SPEED;
             if (el.scrollLeft >= maxScroll - 1) {
-              isPausedAtEdge = true;
-              edgeTimer = window.setTimeout(() => {
-                direction = 'left';
-                isPausedAtEdge = false;
-              }, 1800); // Berhenti 1.8 detik di ujung kanan
+              // Langsung balik arah ke kiri tanpa jeda berhenti
+              direction = 'left';
             }
           } else {
             el.scrollLeft -= SPEED;
             if (el.scrollLeft <= 1) {
-              isPausedAtEdge = true;
-              edgeTimer = window.setTimeout(() => {
-                direction = 'right';
-                isPausedAtEdge = false;
-              }, 1800); // Berhenti 1.8 detik di ujung kiri
+              // Langsung balik arah ke kanan tanpa jeda berhenti
+              direction = 'right';
             }
           }
         }
@@ -78,7 +69,6 @@ export function Skills({ skills }: SkillsProps) {
 
     return () => {
       cancelAnimationFrame(rafId);
-      if (edgeTimer) window.clearTimeout(edgeTimer);
       if (resumeTimeoutRef.current) window.clearTimeout(resumeTimeoutRef.current);
     };
   }, []);
