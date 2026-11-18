@@ -133,7 +133,7 @@ export function Certificates({ certificates }: CertificatesProps) {
                   key={cat}
                   type="button"
                   onClick={() => handleCategoryChange(cat)}
-                  className={`inline-flex h-10 items-center justify-center whitespace-nowrap px-4 rounded-xl text-sm font-medium transition-all ${
+                  className={`inline-flex h-9 sm:h-10 items-center justify-center whitespace-nowrap px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-medium transition-all ${
                     isActive
                       ? 'bg-zinc-100 text-zinc-950 font-semibold shadow-md'
                       : 'bg-white/[0.035] hover:bg-white/[0.08] text-zinc-400 hover:text-zinc-200 border border-white/[0.08]'

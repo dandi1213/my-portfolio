@@ -129,7 +129,7 @@ export function Experience({
                     setSelectedExpType(type);
                     setActiveExpIndex(0);
                   }}
-                  className={`flex h-10 items-center justify-center gap-2 whitespace-nowrap px-4 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  className={`flex h-9 sm:h-10 items-center justify-center gap-2 whitespace-nowrap px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? 'bg-zinc-100 text-zinc-950 font-semibold'
                       : 'bg-white/[0.035] hover:bg-white/[0.08] text-zinc-300 border border-white/[0.08]'
