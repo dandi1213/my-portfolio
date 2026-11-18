@@ -89,7 +89,7 @@ export default function App() {
       setIsScrolled(scrollTop > 24);
       setShowBackToTop(scrollTop > 480);
 
-      const sectionIds = ['home', 'about', 'education', 'skills', 'projects', 'experience', 'contact'];
+      const sectionIds = ['home', 'about', 'education', 'skills', 'projects', 'experience', 'certificates', 'contact'];
       const offsetPosition = scrollTop + 180;
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const el = document.getElementById(sectionIds[i]);
