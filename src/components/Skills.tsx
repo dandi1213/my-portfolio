@@ -34,8 +34,15 @@ export function Skills({ skills }: SkillsProps) {
 
     let rafId: number;
     let direction: 'right' | 'left' = 'right';
+    let scrollPos = el.scrollLeft;
 
-    const SPEED = 0.55; // Kecepatan geser stabil dan konstan
+    const SPEED = 0.85; // Kecepatan geser stabil
+
+    const syncScrollPos = () => {
+      if (el) scrollPos = el.scrollLeft;
+    };
+
+    el.addEventListener('scroll', syncScrollPos, { passive: true });
 
     const tick = () => {
       if (
@@ -47,19 +54,24 @@ export function Skills({ skills }: SkillsProps) {
 
         if (maxScroll > 10) {
           if (direction === 'right') {
-            el.scrollLeft += SPEED;
-            if (el.scrollLeft >= maxScroll - 1) {
-              // Langsung balik arah ke kiri tanpa jeda berhenti
+            scrollPos += SPEED;
+            el.scrollLeft = scrollPos;
+            if (scrollPos >= maxScroll - 1 || el.scrollLeft >= maxScroll - 1) {
               direction = 'left';
+              scrollPos = Math.min(scrollPos, maxScroll);
             }
           } else {
-            el.scrollLeft -= SPEED;
-            if (el.scrollLeft <= 1) {
-              // Langsung balik arah ke kanan tanpa jeda berhenti
+            scrollPos -= SPEED;
+            el.scrollLeft = scrollPos;
+            if (scrollPos <= 1 || el.scrollLeft <= 1) {
               direction = 'right';
+              scrollPos = 0;
             }
           }
         }
+      } else if (el) {
+        // Tetap sinkronkan posisi saat user sedang menyentuh / menggeser
+        scrollPos = el.scrollLeft;
       }
 
       rafId = requestAnimationFrame(tick);
@@ -69,6 +81,7 @@ export function Skills({ skills }: SkillsProps) {
 
     return () => {
       cancelAnimationFrame(rafId);
+      el.removeEventListener('scroll', syncScrollPos);
       if (resumeTimeoutRef.current) window.clearTimeout(resumeTimeoutRef.current);
     };
   }, []);
