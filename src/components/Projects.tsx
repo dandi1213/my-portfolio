@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Eye, Code2, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Code2, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { ProjectItem } from "../types/portfolio";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal } from "./Reveal";
@@ -12,8 +12,16 @@ interface ProjectsProps {
 export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [dragX, setDragX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragXRef = useRef(0);
   const dragStartXRef = useRef<number | null>(null);
+  const dragStartYRef = useRef<number | null>(null);
+  const dragAxisRef = useRef<"x" | "y" | null>(null);
+  const dragPointerIdRef = useRef<number | null>(null);
   const didDragRef = useRef(false);
+
+  const DRAG_THRESHOLD = 48;
 
   const projectCategories = ["All", "Web Development", "IoT & Embedded Systems", "Industrial Automation", "Mobile Development"];
   const filteredProjects = selectedCategory === "All" ? projects : projects.filter((p) => p.category === selectedCategory);
@@ -30,16 +38,53 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
     setActiveProjectIndex((prev) => (prev + 1) % totalFilteredProjects);
   };
 
-  const handleProjectPointerDown = (clientX: number) => {
-    dragStartXRef.current = clientX;
-    didDragRef.current = false;
+  const setDragOffset = (value: number) => {
+    dragXRef.current = value;
+    setDragX(value);
   };
 
-  const handleProjectPointerUp = (clientX: number) => {
-    if (dragStartXRef.current === null) return;
-    const diffX = clientX - dragStartXRef.current;
+  const handleProjectPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (totalFilteredProjects <= 1) return;
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    dragPointerIdRef.current = event.pointerId;
+    dragStartXRef.current = event.clientX;
+    dragStartYRef.current = event.clientY;
+    dragAxisRef.current = null;
+    didDragRef.current = false;
+    setIsDragging(false);
+    setDragOffset(0);
+  };
+
+  const handleProjectPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (dragPointerIdRef.current !== event.pointerId || dragStartXRef.current === null) return;
+
+    const diffX = event.clientX - dragStartXRef.current;
+    const diffY = event.clientY - (dragStartYRef.current ?? event.clientY);
+
+    // Tentukan arah gestur dulu agar scroll vertikal halaman tidak ikut menggeser card.
+    if (dragAxisRef.current === null) {
+      if (Math.abs(diffX) < 6 && Math.abs(diffY) < 6) return;
+      dragAxisRef.current = Math.abs(diffX) > Math.abs(diffY) ? "x" : "y";
+      if (dragAxisRef.current === "x") setIsDragging(true);
+    }
+
+    if (dragAxisRef.current !== "x") return;
+    if (Math.abs(diffX) > 6) didDragRef.current = true;
+    setDragOffset(diffX);
+  };
+
+  const finishProjectDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (dragPointerIdRef.current !== event.pointerId) return;
+
+    const diffX = dragXRef.current;
+    dragPointerIdRef.current = null;
     dragStartXRef.current = null;
-    if (Math.abs(diffX) > 40) {
+    dragStartYRef.current = null;
+    dragAxisRef.current = null;
+    setIsDragging(false);
+    setDragOffset(0);
+
+    if (Math.abs(diffX) >= DRAG_THRESHOLD) {
       didDragRef.current = true;
       if (diffX < 0) {
         handleNextProject();
@@ -47,6 +92,16 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
         handlePrevProject();
       }
     }
+  };
+
+  const cancelProjectDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (dragPointerIdRef.current !== event.pointerId) return;
+    dragPointerIdRef.current = null;
+    dragStartXRef.current = null;
+    dragStartYRef.current = null;
+    dragAxisRef.current = null;
+    setIsDragging(false);
+    setDragOffset(0);
   };
 
   return (
@@ -70,7 +125,7 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
                     setSelectedCategory(category);
                     setActiveProjectIndex(0);
                   }}
-                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all ${isActive ? "bg-zinc-100 text-zinc-950 font-semibold" : "bg-white/[0.035] hover:bg-white/[0.08] text-zinc-300 border border-white/[0.08]"}`}
+                  className={`inline-flex h-10 items-center justify-center whitespace-nowrap px-4 rounded-xl text-sm font-medium transition-all ${isActive ? "bg-zinc-100 text-zinc-950 font-semibold" : "bg-white/[0.035] hover:bg-white/[0.08] text-zinc-300 border border-white/[0.08]"}`}
                 >
                   {category}
                 </button>
@@ -82,14 +137,13 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
         {totalFilteredProjects > 0 && (
           <Reveal delay={140}>
             <div
-              className="project-cycle-stage relative h-[475px] sm:h-[505px] flex items-center justify-center select-none touch-pan-y"
-              onMouseDown={(e) => handleProjectPointerDown(e.clientX)}
-              onMouseUp={(e) => handleProjectPointerUp(e.clientX)}
-              onTouchStart={(e) => {
-                if (e.touches[0]) handleProjectPointerDown(e.touches[0].clientX);
-              }}
-              onTouchEnd={(e) => {
-                if (e.changedTouches[0]) handleProjectPointerUp(e.changedTouches[0].clientX);
+              className="project-cycle-stage relative h-[475px] sm:h-[505px] flex items-center justify-center select-none touch-pan-y cursor-grab active:cursor-grabbing"
+              onPointerDown={handleProjectPointerDown}
+              onPointerMove={handleProjectPointerMove}
+              onPointerUp={finishProjectDrag}
+              onPointerCancel={cancelProjectDrag}
+              onPointerLeave={(event) => {
+                if (event.pointerType === "mouse") cancelProjectDrag(event);
               }}
             >
               {filteredProjects.map((project, idx) => {
@@ -102,7 +156,7 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
                 const isCenter = offset === 0;
                 const isVisible = absOffset <= 2;
 
-                const translateX = `calc(${offset} * var(--cycle-step))`;
+                const translateX = `calc(${offset} * var(--cycle-step)${isDragging ? ` + ${dragX}px` : ""})`;
                 const translateZ = isCenter ? 0 : absOffset === 1 ? -150 : -290;
                 const rotateY = isCenter ? 0 : offset < 0 ? 22 : -22;
                 const scale = isCenter ? 1 : absOffset === 1 ? 0.86 : 0.72;
@@ -113,7 +167,7 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
                   opacity,
                   zIndex: 30 - absOffset * 10,
                   pointerEvents: isVisible ? "auto" : "none",
-                  transition: "transform 540ms cubic-bezier(0.22, 1, 0.36, 1), opacity 400ms ease, border-color 300ms ease",
+                  transition: isDragging ? "none" : "transform 540ms cubic-bezier(0.22, 1, 0.36, 1), opacity 400ms ease, border-color 300ms ease",
                 };
 
                 const coverImage = Array.isArray(project.images) && project.images.length > 0 ? project.images[0] : "";
@@ -174,19 +228,18 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
                         ))}
                       </div>
 
-                      <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between gap-2">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-200 group-hover:text-white">
-                          <Eye className="w-3.5 h-3.5 text-zinc-400" />
-                          <span>Inspect Project &amp; Gallery</span>
-                        </span>
-
+                      <div className="pt-3 border-t border-white/[0.08] flex items-center justify-end gap-2">
                         <div className="flex items-center gap-2">
                           {project.repoUrl && (
                             <a
                               href={project.repoUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
+                              draggable={false}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (didDragRef.current) e.preventDefault();
+                              }}
                               aria-label={`View source code for ${project.title}`}
                               className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/12 text-zinc-300 border border-white/10 transition-colors"
                             >
@@ -198,7 +251,11 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
                               href={project.liveUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
+                              draggable={false}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (didDragRef.current) e.preventDefault();
+                              }}
                               aria-label={`Open live demo for ${project.title}`}
                               className="p-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 transition-colors"
                             >
@@ -219,7 +276,7 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
                 onClick={handlePrevProject}
                 disabled={totalFilteredProjects <= 1}
                 aria-label="Rotate to previous project"
-                className="p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] disabled:opacity-40 text-zinc-200 border border-white/10 transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.04] hover:bg-white/[0.1] disabled:opacity-40 text-zinc-200 border border-white/10 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -241,7 +298,7 @@ export function Projects({ projects, onOpenProjectModal }: ProjectsProps) {
                 onClick={handleNextProject}
                 disabled={totalFilteredProjects <= 1}
                 aria-label="Rotate to next project"
-                className="p-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.1] disabled:opacity-40 text-zinc-200 border border-white/10 transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.04] hover:bg-white/[0.1] disabled:opacity-40 text-zinc-200 border border-white/10 transition-colors"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>

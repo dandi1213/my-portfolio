@@ -129,7 +129,7 @@ export function Experience({
                     setSelectedExpType(type);
                     setActiveExpIndex(0);
                   }}
-                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                  className={`flex h-10 items-center justify-center gap-2 whitespace-nowrap px-4 rounded-xl text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? 'bg-zinc-100 text-zinc-950 font-semibold'
                       : 'bg-white/[0.035] hover:bg-white/[0.08] text-zinc-300 border border-white/[0.08]'
@@ -280,9 +280,9 @@ export function Experience({
               onClick={() => scrollToExperience(Math.max(0, safeActiveIndex - 1))}
               disabled={safeActiveIndex === 0}
               aria-label="Pengalaman sebelumnya"
-              className="p-1.5 rounded-lg bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-1.5" aria-label="Pilih pengalaman">
@@ -311,9 +311,9 @@ export function Experience({
               }
               disabled={safeActiveIndex === filteredExperience.length - 1}
               aria-label="Pengalaman berikutnya"
-              className="p-1.5 rounded-lg bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         )}

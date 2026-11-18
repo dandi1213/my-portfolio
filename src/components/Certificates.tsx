@@ -125,7 +125,7 @@ export function Certificates({ certificates }: CertificatesProps) {
 
         {/* Category Filter Tabs */}
         <Reveal delay={80}>
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-8 sm:mb-10">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
               return (
@@ -133,7 +133,7 @@ export function Certificates({ certificates }: CertificatesProps) {
                   key={cat}
                   type="button"
                   onClick={() => handleCategoryChange(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
+                  className={`inline-flex h-10 items-center justify-center whitespace-nowrap px-4 rounded-xl text-sm font-medium transition-all ${
                     isActive
                       ? 'bg-zinc-100 text-zinc-950 font-semibold shadow-md'
                       : 'bg-white/[0.035] hover:bg-white/[0.08] text-zinc-400 hover:text-zinc-200 border border-white/[0.08]'
@@ -258,9 +258,9 @@ export function Certificates({ certificates }: CertificatesProps) {
               onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
               disabled={activeIndex === 0}
               aria-label="Sertifikat sebelumnya"
-              className="p-1.5 rounded-lg bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
 
             {/* Pagination Dots */}
@@ -285,9 +285,9 @@ export function Certificates({ certificates }: CertificatesProps) {
               onClick={() => scrollToIndex(Math.min(filteredCertificates.length - 1, activeIndex + 1))}
               disabled={activeIndex === filteredCertificates.length - 1}
               aria-label="Sertifikat berikutnya"
-              className="p-1.5 rounded-lg bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08] text-zinc-300 disabled:opacity-20 transition-all active:scale-95"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         )}
