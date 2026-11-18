@@ -9,8 +9,7 @@ import {
   X,
   CheckCircle2,
   ChevronLeft,
-  ChevronRight,
-  ArrowUpRight
+  ChevronRight
 } from 'lucide-react';
 import { ExperienceItem } from '../types/portfolio';
 
@@ -19,15 +18,13 @@ interface ExperienceModalProps {
   allItems?: ExperienceItem[];
   onSelectExperience: (item: ExperienceItem) => void;
   onClose: () => void;
-  onNavigateContact: () => void;
 }
 
 export function ExperienceModal({
   experienceItem,
   allItems = [],
   onSelectExperience,
-  onClose,
-  onNavigateContact
+  onClose
 }: ExperienceModalProps) {
   useEffect(() => {
     if (!experienceItem) return;
@@ -194,8 +191,8 @@ export function ExperienceModal({
             </div>
           </div>
 
-          <div className="pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
-            {hasMultiple ? (
+          {hasMultiple && (
+            <div className="pt-5 border-t border-white/10 flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -220,22 +217,8 @@ export function ExperienceModal({
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-            ) : (
-              <div />
-            )}
-
-            <button
-              type="button"
-              onClick={() => {
-                onClose();
-                onNavigateContact();
-              }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-zinc-950 bg-zinc-100 hover:bg-white transition-colors cursor-pointer"
-            >
-              <span>Discuss Similar Role or Project</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </button>
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

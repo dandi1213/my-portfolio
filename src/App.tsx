@@ -184,7 +184,6 @@ export default function App() {
           if (idx !== -1) setActiveExpIndex(idx);
         }}
         onClose={() => setExpModalItem(null)}
-        onNavigateContact={() => scrollToSection('contact')}
       />
 
       {toastMessage && (
