@@ -163,7 +163,7 @@ Mengembangkan komponen perangkat lunak, meliputi penerimaan data sensor, backend
 
 Proses Pengembangan:
 Data sensor Dragino diterima melalui webhook jaringan LoRaWAN ke backend FastAPI, kemudian divalidasi dan disimpan di MongoDB bersama data cuaca dari OpenWeatherMap dan Open-Meteo. Dua model Random Forest berbasis pipeline scikit-learn dikembangkan menggunakan dataset publik: model klasifikasi (2.200 data, 22 jenis tanaman) dan model regresi (3.000 data, 10 jenis tanaman, dengan mengeluarkan variabel ET₀ dan Kc untuk mencegah data leakage). Backend diterapkan di Render dan frontend di Vercel.`,
-      images: ["/images/Project/TA/ta_1.png", "/images/Project/TA/ta_2.jpeg", "/images/Project/TA/ta_3.jpeg", "/images/Project/TA/ta_4.jpeg", "/images/Project/TA/ta_5.png", "/images/Project/TA/ta_6.png", "/images/Project/TA/ta_7.png"],
+      images: ["/images/Project/TA/ta_0.jpeg","/images/Project/TA/ta_1.png", "/images/Project/TA/ta_2.jpeg", "/images/Project/TA/ta_3.jpeg", "/images/Project/TA/ta_4.jpeg", "/images/Project/TA/ta_5.png", "/images/Project/TA/ta_6.png", "/images/Project/TA/ta_7.png"],
       tags: ["Python", "FastAPI", "MongoDB", "scikit-learn", "LoRaWAN", "JavaScript"],
       highlights: [
         "Hasil Evaluasi: Model klasifikasi meraih akurasi 91,59% (weighted F1 0,92); model regresi menghasilkan MAE 0,35 mm/hari dan R² ~0,55. Lolos 41 skenario pengujian black-box pada 5 modul API.",
@@ -197,7 +197,7 @@ Mengembangkan sebagian besar komponen sistem secara mandiri, termasuk struktur b
 
 Proses Pengembangan:
 Pesan disimpan ke tabel SQL Server melalui API C#. Mesin Python mengambil 10 pesan teratas berstatus New atau Failed berdasarkan sequence terkecil, mengubah status menjadi Proses, mencari nomor tujuan di WhatsApp Web, mengisi pesan melalui injeksi JavaScript, lalu memperbarui status menjadi Sent atau Failed melalui API. Sistem dikembangkan menjadi empat mesin (Ipol Center dan HR Center, masing-masing satu mesin untuk pesan baru dan satu mesin untuk pesan gagal).`,
-      images: ["images/Project/INDOPOLY/indopoly_0.jpeg", "images/Project/INDOPOLY/indopoly_1.png", "images/Project/INDOPOLY/indopoly_2.png", "images/Project/INDOPOLY/indopoly_3.png", "images/Project/INDOPOLY/indopoly_4.png", "images/Project/INDOPOLY/indopoly_5.png", "images/Project/INDOPOLY/indopoly_6.png", "images/Project/INDOPOLY/indopoly_7.png", "images/Project/INDOPOLY/indopoly_8.png", "images/Project/INDOPOLY/indopoly_9.png", "images/Project/INDOPOLY/indopoly_10.png", "images/Project/INDOPOLY/indopoly_11.png", "images/Project/INDOPOLY/indopoly_12.png"],
+      images: ["images/Project/INDOPOLY/indopoly_cover.jpeg","images/Project/INDOPOLY/indopoly_0.jpeg", "images/Project/INDOPOLY/indopoly_1.png", "images/Project/INDOPOLY/indopoly_2.png", "images/Project/INDOPOLY/indopoly_3.png", "images/Project/INDOPOLY/indopoly_4.png", "images/Project/INDOPOLY/indopoly_5.png", "images/Project/INDOPOLY/indopoly_6.png", "images/Project/INDOPOLY/indopoly_7.png", "images/Project/INDOPOLY/indopoly_8.png", "images/Project/INDOPOLY/indopoly_9.png", "images/Project/INDOPOLY/indopoly_10.png", "images/Project/INDOPOLY/indopoly_11.png", "images/Project/INDOPOLY/indopoly_12.png"],
       tags: ["React.js", "C#", "REST API", "Microsoft SQL Server", "Python", "Selenium"],
       highlights: [
         "Hasil & Dampak: Waktu pengiriman berkurang dari >30 detik menjadi ~10 detik per pesan dan tidak lagi bergantung pada panjang pesan. Menangani hingga ~1.000 pesan per hari dan tetap digunakan aktif setelah magang berakhir.",
@@ -231,7 +231,7 @@ Berkolaborasi dalam pengembangan sistem konfigurasi berbasis ESP32 yang memungki
 
 Proses Pengembangan:
 Membangun antarmuka konfigurasi web menggunakan Arduino IDE dan pustaka ESP32. Pengembangan mencakup mode Wi-Fi Access Point dan Station, pemilihan mode komunikasi, serta pemantauan status perangkat. Sistem juga mendukung opsi komunikasi GSM melalui SIM800 dan LoRa melalui modul RFM95/SX1276.`,
-      images: ["images/Project/PBL/pbl_1.png", "images/Project/PBL/pbl_2.png"],
+      images: ["images/Project/PBL/pbl_0.jpeg","images/Project/PBL/pbl_1.png", "images/Project/PBL/pbl_2.png"],
       tags: ["ESP32", "Arduino IDE", "C/C++", "HTML/CSS/JS", "LoRa", "GSM"],
       highlights: [
         "Hasil: Menghasilkan sistem konfigurasi web yang memungkinkan pengaturan kredensial jaringan, mode komunikasi, dan sensor tanpa memprogram ulang ESP32.",
@@ -264,7 +264,7 @@ Berkolaborasi mengembangkan simulasi kendali dan pemantauan pengeboran menggunak
 
 Proses Pengembangan:
 Menyusun logika kendali pada lingkungan Bosch Rexroth ctrlX dan mengonfigurasi alur Node-RED untuk dasbor serta komunikasi PLC. Simulasi mencakup kendali motor maju-mundur, logika operasi, tampilan HMI, dan visualisasi status sistem.`,
-      images: ["images/Project/MES/mes_1.png", "images/Project/MES/mes_2.png", "images/Project/MES/mes_3.png", "images/Project/MES/mes_4.png", "images/Project/MES/mes_5.png", "images/Project/MES/mes_6.png"],
+      images: ["images/Project/MES/mes_0.jpeg","images/Project/MES/mes_1.png", "images/Project/MES/mes_2.png", "images/Project/MES/mes_3.png", "images/Project/MES/mes_4.png", "images/Project/MES/mes_5.png", "images/Project/MES/mes_6.png"],
       tags: ["Bosch Rexroth ctrlX", "PLC", "Node-RED", "JavaScript", "SVG", "MES & OEE"],
       highlights: [
         "Hasil: Prototipe simulasi kendali pengeboran yang menghubungkan logika PLC dengan antarmuka Node-RED sebagai pengalaman integrasi otomasi dan pemantauan berbasis perangkat lunak.",
@@ -280,37 +280,108 @@ const quality = goodCount / totalCount;
 msg.payload = { oee: +(availability * performance * quality * 100).toFixed(2) };
 return msg;`,
     },
-    {
-      id: "proj-5",
-      title: "Aplikasi Seluler Pengumpulan Dokumen Puskesmas Garuda",
-      category: "Mobile Development",
-      year: "2025",
-      client: "UPTD Puskesmas Garuda Bandung (Proyek KKN)",
-      description: `Aplikasi seluler yang dikembangkan untuk mendukung pengumpulan dokumen di UPTD Puskesmas Garuda Bandung selama program KKN.
+{
+  id: "proj-5",
+  title: "Aplikasi Seluler Pengumpulan Dokumen Puskesmas Garuda",
+  category: "Mobile Development",
+  year: "2025",
+  client: "UPTD Puskesmas Garuda Bandung (Proyek KKN)",
+  description: `Aplikasi seluler yang dikembangkan untuk mendukung pengumpulan dokumen di UPTD Puskesmas Garuda Bandung selama program KKN.
 
 Latar Belakang:
 Proyek ini bertujuan mendukung dan mempermudah proses pengumpulan dokumen administrasi di UPTD Puskesmas Garuda Bandung melalui aplikasi seluler.
 
 Peran & Proses Pengembangan:
 Mengembangkan aplikasi seluler menggunakan Flutter dan Dart bersama tim KKN berdasarkan kebutuhan operasional instansi untuk mendukung proses pengumpulan dokumen.`,
-      images: ["/images/Project/KKN/kkn_1.jpeg", "/images/Project/KKN/kkn_2.png", "/images/Project/KKN/kkn_3.png", "/images/Project/KKN/kkn_4.png"],
-      tags: ["Flutter", "Dart", "Mobile Development"],
-      highlights: [
-        "Hasil: Memberikan kontribusi nyata berupa aplikasi seluler yang mendukung pengumpulan dokumen administrasi di UPTD Puskesmas Garuda Bandung.",
-        "Fitur Utama: Aplikasi seluler untuk pengumpulan dokumen dan dukungan digital bagi pengelolaan dokumen administrasi.",
-      ],
-      liveUrl: "",
-      repoUrl: "",
-      architectureSnippet: `// Model data pengajuan dokumen administrasi pada Flutter
+  images: [
+	"/images/Project/KKN/kkn_0.jpeg",
+    "/images/Project/KKN/kkn_1.jpeg",
+    "/images/Project/KKN/kkn_2.png",
+    "/images/Project/KKN/kkn_3.png",
+    "/images/Project/KKN/kkn_4.png",
+  ],
+  tags: ["Flutter", "Dart", "Mobile Development"],
+  highlights: [
+    "Hasil: Memberikan kontribusi nyata berupa aplikasi seluler yang mendukung pengumpulan dokumen administrasi di UPTD Puskesmas Garuda Bandung.",
+    "Fitur Utama: Aplikasi seluler untuk pengumpulan dokumen dan dukungan digital bagi pengelolaan dokumen administrasi.",
+  ],
+  liveUrl: "",
+  repoUrl: "",
+  architectureSnippet: `// Model data pengajuan dokumen administrasi pada Flutter
 class DocumentSubmission {
   final String id;
   final String applicantName;
   final String documentType;
   final DateTime submittedAt;
 
-  DocumentSubmission({required this.id, required this.applicantName, required this.documentType, required this.submittedAt});
+  DocumentSubmission({
+    required this.id,
+    required this.applicantName,
+    required this.documentType,
+    required this.submittedAt,
+  });
 }`,
-    },
+},
+
+{
+  id: "proj-6",
+  title: "Gatherly - Platform Web Manajemen Event & Tiket Digital",
+  category: "Web Development",
+  year: "2026",
+  client: "Proyek Pribadi (Portfolio)",
+  description: `Aplikasi web yang dikembangkan untuk membantu penyelenggara mengelola event gratis secara end-to-end, mulai dari pembuatan event, registrasi peserta, penerbitan tiket digital ber-QR, hingga proses check-in dan pelaporan kehadiran.
+
+Latar Belakang:
+Pengelolaan event sering menghadapi kendala seperti data registrasi yang tersebar, pengaturan kuota secara manual yang rawan kelebihan peserta, distribusi tiket yang kurang rapi, serta proses check-in yang lambat dan berpotensi duplikasi. Gatherly dirancang untuk memusatkan seluruh alur tersebut dalam satu platform.
+
+Peran & Proses Pengembangan:
+Mengembangkan aplikasi web secara mandiri sebagai proyek portfolio menggunakan Laravel, Inertia.js, React, dan Tailwind CSS. Fokus pengembangan mencakup perancangan alur registrasi berbasis kuota, penerbitan tiket digital dengan QR code, validasi check-in yang aman, penugasan staff per event, serta dashboard ringkasan dan ekspor data peserta untuk organizer.`,
+  images: [
+    "/images/Project/Gatherly/gatherly_1.jpeg",
+  ],
+  tags: [
+    "Laravel",
+    "Inertia.js",
+    "React",
+    "Tailwind CSS",
+    "QR Code",
+    "Supabase",
+  ],
+  highlights: [
+    "Hasil: Menghasilkan platform manajemen event dengan alur lengkap (buat event → registrasi → tiket digital → check-in → laporan) yang menjaga integritas data melalui kontrol kuota dan pencegahan check-in ganda.",
+    "Fitur Utama: Manajemen event dan tipe tiket, registrasi peserta, tiket digital ber-QR, check-in via scan kamera atau pencarian manual, penugasan staff, dashboard statistik, serta ekspor data peserta (CSV).",
+  ],
+  liveUrl: "https://gatherly-cbpe.onrender.com/",
+  repoUrl: "https://github.com/dandi1213/gatherly",
+  architectureSnippet: `// Penerbitan tiket secara atomik untuk mencegah oversell kuota
+DB::transaction(function () use ($event, $ticketType, $user) {
+    $lockedType = TicketType::query()
+        ->whereKey($ticketType->id)
+        ->lockForUpdate()
+        ->firstOrFail();
+
+    $issuedCount = $lockedType->tickets()
+        ->whereIn('status', ['active', 'checked_in'])
+        ->count();
+
+    if ($issuedCount >= $lockedType->quota) {
+        throw new \\RuntimeException('Kuota tiket habis.');
+    }
+
+    $registration = Registration::create([
+        'event_id' => $event->id,
+        'user_id' => $user->id,
+        'ticket_type_id' => $lockedType->id,
+        'registration_code' => $this->generateRegistrationCode(),
+        'status' => 'registered',
+    ]);
+
+    $registration->ticket()->create([
+        'ticket_code' => Str::random(40),
+        'status' => 'active',
+    ]);
+});`,
+},
   ],
 
   // 5. PENGALAMAN KERJA, FREELANCE & ORGANISASI
