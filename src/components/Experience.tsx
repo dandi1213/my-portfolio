@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import {
-  Award,
   Briefcase,
   Building2,
   Calendar,
@@ -193,7 +192,7 @@ export function Experience({
                     className="flex h-full min-h-[310px] md:min-h-0 flex-col text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30 rounded-xl"
                     aria-label={`View full details for ${item.role} at ${item.organization}`}
                   >
-                    <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-white/[0.08] md:pb-5">
+                    <div className="flex flex-wrap items-center justify-between gap-2 pb-3.5 border-b border-white/[0.08]">
                       <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] md:text-xs font-semibold bg-zinc-100 text-zinc-950">
                         <Briefcase className="w-3 h-3 md:w-3.5 md:h-3.5" />
                         <span className="max-w-[145px] truncate md:max-w-none">{item.type}</span>
@@ -204,14 +203,24 @@ export function Experience({
                       </span>
                     </div>
 
-                    <div className="flex-1 space-y-3 pt-4 md:space-y-4 md:pt-5">
+                    {/* ── Cover Image ── */}
+                    <div className="relative w-full mt-3.5 rounded-xl overflow-hidden aspect-[16/9] bg-black/40 border border-white/[0.08] group/img shrink-0">
+                      <img
+                        src={item.image || "/images/Experience/placeholder-1.svg"}
+                        alt={`${item.role} — ${item.organization}`}
+                        className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-50" />
+                    </div>
+
+                    <div className="flex-1 space-y-2.5 pt-3.5">
                       <div>
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-zinc-100 tracking-tight leading-snug line-clamp-2">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-zinc-100 tracking-tight leading-snug line-clamp-2">
                           {item.role}
                         </h3>
-                        <div className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs md:text-sm text-zinc-400">
+                        <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-zinc-400">
                           <span className="inline-flex max-w-full items-center gap-1.5 font-semibold text-zinc-200">
-                            <Building2 className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0 text-zinc-400" />
+                            <Building2 className="w-3.5 h-3.5 shrink-0 text-zinc-400" />
                             <span className="truncate">{item.organization}</span>
                           </span>
                           <span className="hidden md:inline">•</span>
@@ -222,39 +231,17 @@ export function Experience({
                         </div>
                       </div>
 
-                      {item.highlightMetric && (
-                        <div className="inline-flex max-w-full items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.035] px-2.5 py-1.5 text-[10px] md:text-xs font-mono text-zinc-300">
-                          <Award className="w-3 h-3 md:w-3.5 md:h-3.5 shrink-0 text-zinc-400" />
-                          <span className="truncate">{item.highlightMetric}</span>
-                        </div>
-                      )}
-
-                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed line-clamp-2 md:line-clamp-3">
+                      <p className="text-xs md:text-sm text-zinc-400 leading-relaxed line-clamp-2">
                         {item.description}
                       </p>
-
-                      {item.impactStats?.length > 0 && (
-                        <div className="hidden md:grid grid-cols-3 gap-2">
-                          {item.impactStats.slice(0, 3).map((stat) => (
-                            <div
-                              key={stat.label}
-                              className="rounded-xl border border-white/[0.07] bg-[#09090B] px-2.5 py-3"
-                            >
-                              <p className="text-sm font-bold text-zinc-100">{stat.value}</p>
-                              <p className="mt-1 text-[10px] text-zinc-500">{stat.label}</p>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
                     </div>
 
-                    <div className="mt-4 pt-4 border-t border-white/[0.08] flex flex-wrap items-end justify-between gap-2 md:mt-5 md:pt-5 md:gap-3">
+                    <div className="mt-3.5 pt-3.5 border-t border-white/[0.08] flex flex-wrap items-end justify-between gap-2">
                       <div className="flex min-w-0 flex-wrap gap-1.5">
                         {item.tags.slice(0, 3).map((tag) => (
                           <span
                             key={tag}
-                            className="max-w-[110px] truncate px-2 py-1 rounded-lg text-[10px] md:text-[11px] font-medium bg-white/[0.04] text-zinc-200 border border-white/[0.08]"
+                            className="max-w-[110px] truncate px-2 py-0.5 rounded-lg text-[10px] font-medium bg-white/[0.04] text-zinc-200 border border-white/[0.08]"
                           >
                             {tag}
                           </span>

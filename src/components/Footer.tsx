@@ -10,12 +10,9 @@ export function Footer({ personal }: FooterProps) {
   return (
     <footer className="border-t border-white/[0.08] py-12 bg-[#09090B]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-zinc-100" />
-          <span className="font-display text-lg font-bold text-zinc-100">
-            {personal.brandName}
-          </span>
-        </div>
+        <p className="text-xs text-zinc-500">
+          © 2026 {personal.fullName}. All rights reserved.
+        </p>
 
         <div className="flex items-center gap-3">
           <a
@@ -46,12 +43,6 @@ export function Footer({ personal }: FooterProps) {
             <Instagram className="w-4 h-4" />
           </a>
         </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-        <p>
-          © {new Date().getFullYear()} {personal.fullName}. All rights reserved.
-        </p>
       </div>
     </footer>
   );

@@ -171,63 +171,43 @@ export function Certificates({ certificates }: CertificatesProps) {
                   scale={1.02}
                   className="h-full rounded-2xl bg-[#0c0c10] border border-white/15 p-2 shadow-2xl shadow-black/90 transition-all group select-none flex flex-col hover:border-white/30"
                 >
-                  {/* ── Inner Certificate Sheet ── */}
+                  {/* ── Inner Certificate Sheet (Simple & Clean) ── */}
                   <div
-                    className="relative w-full h-full rounded-xl bg-gradient-to-b from-[#15151a] via-[#111116] to-[#0d0d12] border border-white/[0.08] p-4 sm:p-5 flex flex-col justify-between overflow-hidden"
+                    className="relative w-full h-full rounded-xl bg-gradient-to-b from-[#15151a] via-[#111116] to-[#0d0d12] border border-white/[0.08] p-4 flex flex-col justify-between overflow-hidden"
                     style={{ transform: 'translateZ(10px)' }}
                   >
-                    {/* Decorative Guilloche Inlay Border */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-1.5 rounded-lg border border-dashed border-white/[0.08] pointer-events-none"
-                    />
-
-                    {/* ── Top Header: Document Badge & Issuer ── */}
-                    <div className="relative z-10 flex items-start justify-between gap-2 border-b border-white/[0.08] pb-3">
-                      <div className="min-w-0">
-                        <span className="text-[8px] sm:text-[9px] font-mono tracking-[0.2em] uppercase text-zinc-400 block">
-                          Official Certificate
+                    <div>
+                      {/* ── Category Badge & Issuer (di atas gambar) ── */}
+                      <div className="flex items-center justify-between gap-2 mb-2.5">
+                        <span className="inline-flex px-2.5 py-0.5 rounded-md text-[10px] font-mono bg-white/[0.04] text-zinc-300 border border-white/[0.08]">
+                          {cert.category}
                         </span>
-                        <p className="text-xs font-semibold text-zinc-300 truncate mt-0.5" title={cert.issuer}>
+                        <p className="text-[10px] font-mono text-zinc-400 tracking-wide uppercase truncate" title={cert.issuer}>
                           {cert.issuer}
                         </p>
                       </div>
 
-                      {/* Certificate Medallion Stamp */}
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-white/15 via-white/5 to-transparent border border-white/20 flex items-center justify-center shrink-0 shadow-inner group-hover:scale-105 transition-transform">
-                        <Award className="w-4 h-4 text-zinc-200" />
+                      {/* ── Certificate Image Thumbnail ── */}
+                      <div className="relative w-full rounded-xl overflow-hidden aspect-[16/10] bg-black/40 border border-white/[0.08] group/img mb-3.5">
+                        <img
+                          src={cert.image || "/images/Certificates/placeholder.svg"}
+                          alt={cert.title}
+                          className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-40" />
                       </div>
-                    </div>
 
-                    {/* ── Certificate Image Thumbnail Placeholder ── */}
-                    <div className="relative z-10 my-3 rounded-xl overflow-hidden aspect-[16/10] bg-black/40 border border-white/[0.08] group/img">
-                      <img
-                        src={cert.image || "/images/Certificates/placeholder.svg"}
-                        alt={cert.title}
-                        className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-                      <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[9px] font-mono bg-black/70 backdrop-blur-md text-zinc-300 border border-white/10">
-                        {cert.category}
-                      </span>
-                    </div>
-
-                    {/* ── Middle: Certificate Title & Short Details ── */}
-                    <div className="relative z-10 mb-3 space-y-1.5">
+                      {/* ── Title ── */}
                       <h3
-                        className="text-sm sm:text-base font-bold text-zinc-100 tracking-tight leading-snug line-clamp-2 group-hover:text-white transition-colors"
+                        className="text-sm font-bold text-zinc-100 tracking-tight leading-snug line-clamp-2 group-hover:text-white transition-colors"
                         title={cert.title}
                       >
                         {cert.title}
                       </h3>
-
-                      <p className="text-[11px] sm:text-xs text-zinc-400 line-clamp-2 leading-relaxed">
-                        {cert.description}
-                      </p>
                     </div>
 
-                    {/* ── Bottom: Date, Signature Line & Action Button ── */}
-                    <div className="relative z-10 pt-2.5 border-t border-white/[0.07] flex items-center justify-between gap-2">
+                    {/* ── Bottom: Date & Action Button ── */}
+                    <div className="pt-3 mt-3 border-t border-white/[0.07] flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5 text-[10px] font-mono text-zinc-400">
                         <Calendar className="w-3 h-3 text-zinc-400" />
                         <span>{cert.issueDate}</span>

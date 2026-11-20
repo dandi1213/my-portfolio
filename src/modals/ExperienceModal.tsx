@@ -131,19 +131,28 @@ export function ExperienceModal({
 
         {/* ── MODAL BODY: DAPAT DISCROLL BEBAS TANPA MEMPENGARUHI HALAMAN UTAMA ── */}
         <div className="flex-1 overflow-y-auto p-5 sm:p-7 space-y-6 sm:space-y-7 overscroll-contain">
-          {Array.isArray(experienceItem.impactStats) && experienceItem.impactStats.length > 0 && (
-            <div className="grid grid-cols-3 gap-3 sm:gap-4">
-              {experienceItem.impactStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="p-3.5 sm:p-4 rounded-2xl bg-[#09090B] border border-white/[0.08] text-center"
-                >
-                  <p className="text-base sm:text-xl lg:text-2xl font-display font-bold text-zinc-100">
-                    {stat.value}
-                  </p>
-                  <p className="text-[10px] sm:text-xs text-zinc-400 mt-1">{stat.label}</p>
-                </div>
-              ))}
+          {Array.isArray(experienceItem.images) && experienceItem.images.length > 0 && (
+            <div className="space-y-3">
+              <h4 className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+                Documentation Gallery
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {experienceItem.images.map((src, idx) => (
+                  <div
+                    key={`${src}-${idx}`}
+                    className="relative rounded-xl overflow-hidden aspect-[16/10] bg-black/40 border border-white/[0.08] group/img"
+                  >
+                    <img
+                      src={src}
+                      alt={`${experienceItem.role} — dokumentasi ${idx + 1}`}
+                      className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[9px] font-mono bg-black/70 backdrop-blur-md text-zinc-300 border border-white/10">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 

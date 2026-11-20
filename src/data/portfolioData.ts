@@ -54,6 +54,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       description:
         "Tugas akhir mengembangkan sistem pendukung keputusan pertanian cerdas berbasis Internet of Things (IoT) dan machine learning, dengan aplikasi web untuk mengintegrasikan data sensor, mengolah informasi, dan menghasilkan rekomendasi tanaman serta kebutuhan air irigasi.",
       highlights: ["Software Development", "Internet of Things (IoT)", "Machine Learning"],
+      logo: "/images/Education/polman.png",
     },
     {
       id: "edu-2",
@@ -66,6 +67,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       description:
         "Mempelajari dasar-dasar otomasi industri, sistem kendali, instalasi dan pengawatan listrik, serta perakitan perangkat keras dan pemrograman mikrokontroler. Memperoleh pemahaman mengenai penggunaan PLC, komponen elektronika, dan penerapan sistem otomasi dalam proses industri.",
       highlights: ["Otomasi Industri", "Sistem Kendali", "Robotika"],
+      logo: "/images/Education/smkn.png",
     },
   ],
 
@@ -82,7 +84,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Sertifikat kemampuan bahasa Inggris dengan perolehan skor TOEFL ITP sebesar 418.",
       skills: ["English Proficiency", "TOEFL ITP"],
-      image: "/images/Certificates/placeholder.svg",
+      image: "/images/Certificates/TOEFL.png",
     },
     {
       id: "cert-2",
@@ -94,7 +96,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Mengikuti webinar yang membahas penerapan dan implementasi teknologi otomasi dalam lingkungan industri manufaktur.",
       skills: ["Otomasi Industri", "Manufaktur", "Teknologi Industri"],
-      image: "/images/Certificates/placeholder.svg",
+      image: "/images/Certificates/Webinar-1.png",
     },
     {
       id: "cert-3",
@@ -106,7 +108,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Mengikuti pelatihan dasar pemrograman Python sebagai pengenalan konsep dan penerapan bahasa pemrograman.",
       skills: ["Python", "Programming", "Basic Programming"],
-      image: "/images/Certificates/placeholder.svg",
+      image: "/images/Certificates/Sertifikat-LKI-Python.png",
     },
     {
       id: "cert-4",
@@ -118,7 +120,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Sertifikat hasil uji kompetensi pada bidang keahlian Teknik Otomasi Industri.",
       skills: ["Teknik Otomasi Industri", "Sistem Kendali"],
-      image: "/images/Certificates/placeholder.svg",
+      image: "/images/Certificates/Sertifikat-Ujikom-PLC.png",
     },
     {
       id: "cert-5",
@@ -130,7 +132,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Meraih Juara 1 dalam kompetisi perakitan Smartcar Bluetooth yang diselenggarakan pada 31 Mei–5 Juni 2021 oleh Robonesia bekerja sama dengan UPTD TIKOMDIK dan Dinas Pendidikan Provinsi Jawa Barat.",
       skills: ["Robotika", "Smartcar", "Bluetooth", "Mikrokontroler"],
-      image: "/images/Certificates/placeholder.svg",
+      image: "/images/Certificates/Juara-1-Robotic.png",
     },
   ],
 
@@ -202,7 +204,7 @@ Mengembangkan sebagian besar komponen sistem secara mandiri, termasuk struktur b
 
 Proses Pengembangan:
 Pesan disimpan ke tabel SQL Server melalui API C#. Mesin Python mengambil 10 pesan teratas berstatus New atau Failed berdasarkan sequence terkecil, mengubah status menjadi Proses, mencari nomor tujuan di WhatsApp Web, mengisi pesan melalui injeksi JavaScript, lalu memperbarui status menjadi Sent atau Failed melalui API. Sistem dikembangkan menjadi empat mesin (Ipol Center dan HR Center, masing-masing satu mesin untuk pesan baru dan satu mesin untuk pesan gagal).`,
-      images: ["images/Project/INDOPOLY/indopoly_cover.jpeg","images/Project/INDOPOLY/indopoly_0.jpeg", "images/Project/INDOPOLY/indopoly_1.png", "images/Project/INDOPOLY/indopoly_2.png", "images/Project/INDOPOLY/indopoly_3.png", "images/Project/INDOPOLY/indopoly_4.png", "images/Project/INDOPOLY/indopoly_5.png", "images/Project/INDOPOLY/indopoly_6.png", "images/Project/INDOPOLY/indopoly_7.png", "images/Project/INDOPOLY/indopoly_8.png", "images/Project/INDOPOLY/indopoly_9.png", "images/Project/INDOPOLY/indopoly_10.png", "images/Project/INDOPOLY/indopoly_11.png", "images/Project/INDOPOLY/indopoly_12.png"],
+      images: ["images/Project/INDOPOLY/indopoly_cover.jpeg","images/Project/INDOPOLY/indopoly_0.png", "images/Project/INDOPOLY/indopoly_1.png", "images/Project/INDOPOLY/indopoly_2.png", "images/Project/INDOPOLY/indopoly_3.png", "images/Project/INDOPOLY/indopoly_4.png", "images/Project/INDOPOLY/indopoly_5.png", "images/Project/INDOPOLY/indopoly_6.png", "images/Project/INDOPOLY/indopoly_7.png", "images/Project/INDOPOLY/indopoly_8.png", "images/Project/INDOPOLY/indopoly_9.png", "images/Project/INDOPOLY/indopoly_10.png", "images/Project/INDOPOLY/indopoly_11.png", "images/Project/INDOPOLY/indopoly_12.png"],
       tags: ["React.js", "C#", "REST API", "Microsoft SQL Server", "Python", "Selenium"],
       highlights: [
         "Hasil & Dampak: Waktu pengiriman berkurang dari >30 detik menjadi ~10 detik per pesan dan tidak lagi bergantung pada panjang pesan. Menangani hingga ~1.000 pesan per hari dan tetap digunakan aktif setelah magang berakhir.",
@@ -412,6 +414,10 @@ DB::transaction(function () use ($event, $ticketType, $user) {
         { label: "Kolaborasi", value: "Tim KKN" },
       ],
       tags: ["Flutter", "Dart", "Mobile App"],
+      image: "/images/Experience/kkn_1.jpeg",
+      images: [
+        
+      ],
     },
     {
       id: "exp-2",
@@ -438,6 +444,10 @@ Selain pengembangan perangkat lunak, turut membantu pemantauan tiket layanan TI 
         { label: "Nilai Magang", value: "A (PPI)" },
       ],
       tags: ["React.js", "C#", "REST API", "SQL Server", "Python", "Selenium", "JavaScript", "ESP8266"],
+      image: "/images/Experience/indopoly_0.png",
+      images: [
+      
+      ],
     },
     {
       id: "exp-3",
@@ -461,6 +471,10 @@ Selain pengembangan perangkat lunak, turut membantu pemantauan tiket layanan TI 
         { label: "Industri", value: "Farmasi" },
       ],
       tags: ["PLC", "Otomasi Industri", "Pemeliharaan Preventif", "Pengawatan Listrik"],
+      image: "/images/Experience/sanbefarma.jpg",
+      images: [
+       
+      ],
     },
     {
       id: "exp-4",
@@ -483,6 +497,10 @@ Selain pengembangan perangkat lunak, turut membantu pemantauan tiket layanan TI 
         { label: "Periode", value: "2024–2026" },
       ],
       tags: ["Manajemen Logistik", "Koordinasi Tim", "Organisasi Mahasiswa"],
+      image: "/images/Experience/hima_0.png",
+      images: [
+      
+      ],
     },
   ],
 };

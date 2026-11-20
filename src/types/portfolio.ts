@@ -29,6 +29,7 @@ export interface EducationItem {
   honors: string;
   description: string;
   highlights: string[];
+  logo?: string;
 }
 
 export interface SkillItem {
@@ -70,6 +71,8 @@ export interface ExperienceItem {
   achievements: string[];
   impactStats: ImpactStat[];
   tags: string[];
+  image?: string;
+  images?: string[];
 }
 
 export interface CertificateItem {

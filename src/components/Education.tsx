@@ -32,18 +32,29 @@ export function Education({ education }: EducationProps) {
                   className="h-full rounded-3xl bg-[#111114] border border-white/[0.1] hover:border-white/25 p-7 sm:p-8 flex flex-col justify-between shadow-2xl shadow-black/80 transition-all group overflow-hidden"
                 >
                   <div className="space-y-5" style={{ transform: 'translateZ(25px)' }}>
-                    <div className="flex flex-wrap items-center justify-between gap-2.5">
-                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-zinc-200 bg-white/[0.05] border border-white/10 shadow-md">
-                        <Calendar className="w-3.5 h-3.5 text-zinc-400" />
-                        {edu.period}
-                      </span>
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      {/* ── Logo Sekolah / Perguruan Tinggi ── */}
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-2xl overflow-hidden bg-white/[0.04] border border-white/[0.1] flex items-center justify-center group-hover:border-white/25 transition-colors">
+                        <img
+                          src={edu.logo || "/images/Education/placeholder-polman.svg"}
+                          alt={`Logo ${edu.institution}`}
+                          className="w-full h-full object-contain p-1.5 group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
 
-                      {edu.honors && (
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono text-zinc-300 bg-white/[0.03] border border-white/[0.08]">
-                          <Award className="w-3.5 h-3.5 text-zinc-400" />
-                          <span>Prestasi / Sertifikasi</span>
+                      <div className="flex flex-wrap items-center justify-end gap-2.5">
+                        <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium text-zinc-200 bg-white/[0.05] border border-white/10 shadow-md">
+                          <Calendar className="w-3.5 h-3.5 text-zinc-400" />
+                          {edu.period}
                         </span>
-                      )}
+
+                        {edu.honors && (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono text-zinc-300 bg-white/[0.03] border border-white/[0.08]">
+                            <Award className="w-3.5 h-3.5 text-zinc-400" />
+                            <span>Prestasi / Sertifikasi</span>
+                          </span>
+                        )}
+                      </div>
                     </div>
 
                     <div>
