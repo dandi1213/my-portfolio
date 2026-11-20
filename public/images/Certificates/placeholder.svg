@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121218" />
+      <stop offset="100%" stop-color="#09090c" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)" />
+  
+  <!-- Border frame -->
+  <rect x="24" y="24" width="752" height="452" rx="12" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-dasharray="8 8" />
+  <rect x="36" y="36" width="728" height="428" rx="8" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+
+  <!-- Corner accents -->
+  <path d="M 48 64 L 48 48 L 64 48" fill="none" stroke="#3b82f6" stroke-width="3" />
+  <path d="M 752 64 L 752 48 L 736 48" fill="none" stroke="#3b82f6" stroke-width="3" />
+  <path d="M 48 436 L 48 452 L 64 452" fill="none" stroke="#3b82f6" stroke-width="3" />
+  <path d="M 752 436 L 752 452 L 736 452" fill="none" stroke="#3b82f6" stroke-width="3" />
+
+  <!-- Content -->
+  <text x="400" y="110" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#a1a1aa" letter-spacing="4" text-anchor="middle">OFFICIAL CREDENTIAL</text>
+  
+  <text x="400" y="180" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Certificate / Award Preview</text>
+  
+  <text x="400" y="220" font-family="system-ui, sans-serif" font-size="15" fill="#71717a" text-anchor="middle">Tempatkan gambar sertifikat Anda di folder public/images/Certificates/</text>
+
+  <!-- Placeholder Badge / Icon -->
+  <g transform="translate(360, 260)">
+    <circle cx="40" cy="40" r="36" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
+    <path d="M30 40 L37 47 L52 31" fill="none" stroke="#3b82f6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <text x="400" y="380" font-family="system-ui, sans-serif" font-size="13" fill="#52525b" text-anchor="middle">M Dandi Al Idrus • Portfolio</text>
+</svg>

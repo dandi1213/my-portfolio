@@ -199,19 +199,27 @@ export function Certificates({ certificates }: CertificatesProps) {
                       </div>
                     </div>
 
+                    {/* ── Certificate Image Thumbnail Placeholder ── */}
+                    <div className="relative z-10 my-3 rounded-xl overflow-hidden aspect-[16/10] bg-black/40 border border-white/[0.08] group/img">
+                      <img
+                        src={cert.image || "/images/Certificates/placeholder.svg"}
+                        alt={cert.title}
+                        className="w-full h-full object-cover object-center group-hover/img:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+                      <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[9px] font-mono bg-black/70 backdrop-blur-md text-zinc-300 border border-white/10">
+                        {cert.category}
+                      </span>
+                    </div>
+
                     {/* ── Middle: Certificate Title & Short Details ── */}
-                    <div className="relative z-10 my-3.5 space-y-2">
-                      <div>
-                        <span className="inline-block px-2 py-0.5 rounded-md text-[9px] font-mono bg-white/[0.04] text-zinc-400 border border-white/[0.06] mb-1">
-                          {cert.category}
-                        </span>
-                        <h3
-                          className="text-sm sm:text-base font-bold text-zinc-100 tracking-tight leading-snug line-clamp-2 group-hover:text-white transition-colors"
-                          title={cert.title}
-                        >
-                          {cert.title}
-                        </h3>
-                      </div>
+                    <div className="relative z-10 mb-3 space-y-1.5">
+                      <h3
+                        className="text-sm sm:text-base font-bold text-zinc-100 tracking-tight leading-snug line-clamp-2 group-hover:text-white transition-colors"
+                        title={cert.title}
+                      >
+                        {cert.title}
+                      </h3>
 
                       <p className="text-[11px] sm:text-xs text-zinc-400 line-clamp-2 leading-relaxed">
                         {cert.description}

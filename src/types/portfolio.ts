@@ -82,6 +82,7 @@ export interface CertificateItem {
   credentialId?: string;
   description: string;
   skills: string[];
+  image?: string;
 }
 
 export interface PortfolioData {

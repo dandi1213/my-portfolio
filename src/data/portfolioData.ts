@@ -82,6 +82,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Sertifikat kemampuan bahasa Inggris dengan perolehan skor TOEFL ITP sebesar 418.",
       skills: ["English Proficiency", "TOEFL ITP"],
+      image: "/images/Certificates/placeholder.svg",
     },
     {
       id: "cert-2",
@@ -93,6 +94,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Mengikuti webinar yang membahas penerapan dan implementasi teknologi otomasi dalam lingkungan industri manufaktur.",
       skills: ["Otomasi Industri", "Manufaktur", "Teknologi Industri"],
+      image: "/images/Certificates/placeholder.svg",
     },
     {
       id: "cert-3",
@@ -104,6 +106,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Mengikuti pelatihan dasar pemrograman Python sebagai pengenalan konsep dan penerapan bahasa pemrograman.",
       skills: ["Python", "Programming", "Basic Programming"],
+      image: "/images/Certificates/placeholder.svg",
     },
     {
       id: "cert-4",
@@ -115,6 +118,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Sertifikat hasil uji kompetensi pada bidang keahlian Teknik Otomasi Industri.",
       skills: ["Teknik Otomasi Industri", "Sistem Kendali"],
+      image: "/images/Certificates/placeholder.svg",
     },
     {
       id: "cert-5",
@@ -126,6 +130,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       credentialId: "",
       description: "Meraih Juara 1 dalam kompetisi perakitan Smartcar Bluetooth yang diselenggarakan pada 31 Mei–5 Juni 2021 oleh Robonesia bekerja sama dengan UPTD TIKOMDIK dan Dinas Pendidikan Provinsi Jawa Barat.",
       skills: ["Robotika", "Smartcar", "Bluetooth", "Mikrokontroler"],
+      image: "/images/Certificates/placeholder.svg",
     },
   ],
 
