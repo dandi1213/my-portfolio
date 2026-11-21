@@ -389,6 +389,92 @@ DB::transaction(function () use ($event, $ticketType, $user) {
     ]);
 });`,
 },
+{
+  id: "proj-7",
+  title: "Cuanora - Personal Finance Tracker",
+  category: "Web Development",
+  year: "2026",
+  client: "Proyek Pribadi (Portfolio)",
+  description: `Aplikasi web manajemen keuangan pribadi yang membantu pengguna mencatat pemasukan dan pengeluaran, mengelola beberapa wallet, mengatur anggaran bulanan, memantau target tabungan, serta memahami kondisi keuangan melalui dashboard dan laporan sederhana.
+
+Latar Belakang:
+Pengelolaan keuangan pribadi sering terkendala oleh pencatatan yang tersebar, saldo yang tidak sinkron dengan transaksi, pengeluaran yang sulit dikontrol, dan minimnya gambaran menyeluruh tentang arus kas. Cuanora dirancang untuk memusatkan seluruh alur tersebut dalam satu aplikasi yang sederhana, responsif, dan mudah dipahami.
+
+Peran & Proses Pengembangan:
+Mengembangkan aplikasi secara mandiri sebagai proyek portfolio menggunakan Next.js App Router, TypeScript, Supabase, dan Tailwind CSS. Fokus pengembangan mencakup perancangan skema database dengan Row Level Security, perhitungan saldo wallet yang selalu diturunkan dari transaksi, validasi transaksi dan budget di sisi server, visualisasi keuangan dengan Recharts, serta antarmuka responsif dengan navigasi sidebar di desktop dan bottom navigation di mobile.`,
+  images: [
+    "/images/Project/Cuanora/Cuanora_cover.jpeg",
+  ],
+  tags: [
+    "Next.js",
+    "TypeScript",
+    "Supabase",
+    "Tailwind CSS",
+    "React",
+    "Recharts",
+    "shadcn/ui",
+    "React Hook Form",
+    "Zod",
+  ],
+  highlights: [
+    "Hasil: Menghasilkan aplikasi finance tracker dengan alur lengkap (register → wallet → transaksi → budget → savings goal → laporan) yang menjaga integritas data melalui isolasi antar pengguna, validasi tipe kategori, dan perhitungan saldo yang tidak pernah disimpan secara stale.",
+    "Fitur Utama: Autentikasi dan profil, manajemen wallet, pencatatan pemasukan/pengeluaran dengan filter dan pencarian, budget bulanan overall maupun per kategori dengan status normal/warning/exceeded, target tabungan dengan progress manual, dashboard statistik dengan grafik Recharts, laporan keuangan per periode, serta UI responsif dengan Bahasa Indonesia dan format mata uang IDR.",
+  ],
+  liveUrl: "https://cuanora-finance-tracker.vercel.app",
+  repoUrl: "",
+  architectureSnippet: `// Server Action: membuat transaksi dengan validasi kepemilikan & tipe kategori
+'use server'
+
+export async function createTransaction(input: TransactionInput) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) throw new Error('Unauthorized')
+
+  const parsed = transactionSchema.parse(input) // validasi Zod: amount > 0, tanggal valid
+
+  // Wallet dan kategori harus dimiliki user yang sama, dan tipe kategori
+  // harus cocok dengan tipe transaksi (income/expense)
+  const [{ data: wallet }, { data: category }] = await Promise.all([
+    supabase
+      .from('wallets')
+      .select('id')
+      .eq('id', parsed.walletId)
+      .eq('user_id', user.id)
+      .single(),
+    supabase
+      .from('categories')
+      .select('id')
+      .eq('id', parsed.categoryId)
+      .eq('user_id', user.id)
+      .eq('type', parsed.type)
+      .single(),
+  ])
+
+  if (!wallet || !category) {
+    throw new Error('Wallet atau kategori tidak valid.')
+  }
+
+  const { data, error } = await supabase
+    .from('transactions')
+    .insert({
+      user_id: user.id,
+      wallet_id: wallet.id,
+      category_id: category.id,
+      type: parsed.type,
+      amount: parsed.amount,
+      description: parsed.description,
+      transaction_date: parsed.transactionDate,
+    })
+    .select()
+    .single()
+
+  if (error) throw error
+
+  // Saldo tidak disimpan sebagai kolom: selalu dihitung ulang dari
+  // initial_balance + total income - total expense (diamankan oleh RLS)
+  return data
+}`,
+},
   ],
 
   // 5. PENGALAMAN KERJA, FREELANCE & ORGANISASI
